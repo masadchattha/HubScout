@@ -14,6 +14,7 @@
 		DC377AD72C463AA500C3C0E1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AD62C463AA500C3C0E1 /* SearchVC.swift */; };
 		DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */; };
 		DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */; };
+		DC377ADD2C46506300C3C0E1 /* HSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377ADC2C46506300C3C0E1 /* HSTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DC377AD62C463AA500C3C0E1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSButton.swift; sourceTree = "<group>"; };
+		DC377ADC2C46506300C3C0E1 /* HSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DC377AD62C463AA500C3C0E1 /* SearchVC.swift */,
 				DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */,
 				DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */,
+				DC377ADC2C46506300C3C0E1 /* HSTextField.swift */,
 				DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */,
 				DC377ACD2C450FE800C3C0E1 /* LaunchScreen.storyboard */,
 				DC377AD02C450FE800C3C0E1 /* Info.plist */,
@@ -144,6 +147,7 @@
 				DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */,
 				DC377AD72C463AA500C3C0E1 /* SearchVC.swift in Sources */,
 				DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */,
+				DC377ADD2C46506300C3C0E1 /* HSTextField.swift in Sources */,
 				DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
