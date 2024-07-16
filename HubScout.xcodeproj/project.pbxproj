@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */; };
 		DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */; };
-		DC377AC72C450FE700C3C0E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC62C450FE700C3C0E1 /* ViewController.swift */; };
 		DC377ACC2C450FE800C3C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */; };
 		DC377ACF2C450FE800C3C0E1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DC377ACE2C450FE800C3C0E1 /* Base */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		DC377ABF2C450FE700C3C0E1 /* HubScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC377AC62C450FE700C3C0E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC377ACE2C450FE800C3C0E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC377AD02C450FE800C3C0E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 			children = (
 				DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */,
 				DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */,
-				DC377AC62C450FE700C3C0E1 /* ViewController.swift */,
 				DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */,
 				DC377ACD2C450FE800C3C0E1 /* LaunchScreen.storyboard */,
 				DC377AD02C450FE800C3C0E1 /* Info.plist */,
@@ -134,7 +131,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC377AC72C450FE700C3C0E1 /* ViewController.swift in Sources */,
 				DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */,
 				DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */,
 			);
