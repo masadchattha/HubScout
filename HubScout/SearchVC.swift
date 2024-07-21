@@ -63,6 +63,7 @@ private extension SearchVC {
 
     func configureCallToActionButton() {
         view.addSubview(callToActionButton)
+        callToActionButton.addTarget(self, action: #selector(navigateFollowerListVC), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
@@ -70,6 +71,20 @@ private extension SearchVC {
             callToActionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+}
+
+
+// MARK: - Navigation Method
+
+
+private extension SearchVC {
+
+    @objc func navigateFollowerListVC() {
+        let followerListVC      = FollowerListVC()
+        followerListVC.username = usernameTextField.text
+        followerListVC.title    = usernameTextField.text
+         navigationController?.pushViewController(followerListVC, animated: true)
     }
 }
 
