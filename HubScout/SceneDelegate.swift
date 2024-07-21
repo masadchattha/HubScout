@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = createTabbar()
         window?.makeKeyAndVisible()
+        configureNavigationBar()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -55,6 +56,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: - Helper Methods
 
 extension SceneDelegate {
+    
+    func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemGreen
+    }
+
 
     func createSearchNC() -> UINavigationController {
         let searchVC = SearchVC()
