@@ -19,6 +19,7 @@ class SearchVC: UIViewController {
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
+        createDismissKeyboardTapGesture()
     }
 
 
@@ -29,7 +30,7 @@ class SearchVC: UIViewController {
 }
 
 
-// MARK: - Configuration Methods
+// MARK: - UI Configuration Methods
 
 private extension SearchVC {
 
@@ -71,3 +72,13 @@ private extension SearchVC {
     }
 }
 
+
+// MARK: - GestureRecognizer Methods
+
+extension SearchVC {
+
+    func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+}
