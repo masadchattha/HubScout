@@ -13,6 +13,8 @@ class SearchVC: UIViewController {
     let usernameTextField = HSTextField()
     let callToActionButton = HSButton(backgrounColor: .systemGreen, title: "Get Followers")
 
+    var isUsernameEntered: Bool { usernameTextField.text!.isNotBlank }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -81,6 +83,7 @@ private extension SearchVC {
 private extension SearchVC {
 
     @objc func navigateFollowerListVC() {
+        guard isUsernameEntered else { return }
         let followerListVC      = FollowerListVC()
         followerListVC.username = usernameTextField.text
         followerListVC.title    = usernameTextField.text
