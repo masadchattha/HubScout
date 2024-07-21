@@ -16,15 +16,15 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        configureLogoImageView()
+        configureTextField()
+        configureCallToActionButton()
     }
 
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        configureLogoImageView()
-        configureTextField()
-        configureButton()
     }
 }
 
@@ -63,9 +63,10 @@ private extension SearchVC {
         view.addSubview(callToActionButton)
 
         NSLayoutConstraint.activate([
-            callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
+            callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            callToActionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+//            callToActionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
