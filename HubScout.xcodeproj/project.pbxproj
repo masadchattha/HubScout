@@ -65,6 +65,39 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DC2251A92C4DA3E8003C9443 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DC377AD62C463AA500C3C0E1 /* SearchVC.swift */,
+				DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */,
+				DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DC2251AA2C4DA3FD003C9443 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */,
+				DC377ADC2C46506300C3C0E1 /* HSTextField.swift */,
+				DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */,
+				DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */,
+				DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		DC2251AB2C4DA427003C9443 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */,
+				DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */,
+				DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */,
+				DC377ACD2C450FE800C3C0E1 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		DC377AB62C450FE700C3C0E1 = {
 			isa = PBXGroup;
 			children = (
@@ -84,19 +117,10 @@
 		DC377AC12C450FE700C3C0E1 /* HubScout */ = {
 			isa = PBXGroup;
 			children = (
-				DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */,
-				DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */,
-				DC377AD62C463AA500C3C0E1 /* SearchVC.swift */,
-				DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */,
-				DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */,
-				DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */,
-				DC377ADC2C46506300C3C0E1 /* HSTextField.swift */,
-				DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */,
-				DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */,
-				DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */,
+				DC2251A92C4DA3E8003C9443 /* Screens */,
+				DC2251AA2C4DA3FD003C9443 /* Custom Views */,
+				DC2251AB2C4DA427003C9443 /* Support */,
 				DC22519C2C4CE4D3003C9443 /* Extensions */,
-				DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */,
-				DC377ACD2C450FE800C3C0E1 /* LaunchScreen.storyboard */,
 				DC377AD02C450FE800C3C0E1 /* Info.plist */,
 			);
 			path = HubScout;
