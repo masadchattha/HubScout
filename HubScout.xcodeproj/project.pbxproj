@@ -10,6 +10,8 @@
 		DC22519B2C4CDD66003C9443 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */; };
 		DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22519D2C4CE511003C9443 /* Collection+Ext.swift */; };
 		DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22519F2C4CE773003C9443 /* String+Ext.swift */; };
+		DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */; };
+		DC2251A42C4D18DB003C9443 /* HSBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */; };
 		DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */; };
 		DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */; };
 		DC377ACC2C450FE800C3C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		DC22519D2C4CE511003C9443 /* Collection+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
 		DC22519F2C4CE773003C9443 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSTitleLabel.swift; sourceTree = "<group>"; };
+		DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBodyLabel.swift; sourceTree = "<group>"; };
 		DC377ABF2C450FE700C3C0E1 /* HubScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,10 +86,12 @@
 				DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */,
 				DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */,
 				DC377ADC2C46506300C3C0E1 /* HSTextField.swift */,
+				DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */,
 				DC22519C2C4CE4D3003C9443 /* Extensions */,
 				DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */,
 				DC377ACD2C450FE800C3C0E1 /* LaunchScreen.storyboard */,
 				DC377AD02C450FE800C3C0E1 /* Info.plist */,
+				DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */,
 			);
 			path = HubScout;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */,
 				DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */,
 				DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */,
 				DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */,
@@ -167,6 +174,7 @@
 				DC377AD72C463AA500C3C0E1 /* SearchVC.swift in Sources */,
 				DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */,
 				DC22519B2C4CDD66003C9443 /* FollowerListVC.swift in Sources */,
+				DC2251A42C4D18DB003C9443 /* HSBodyLabel.swift in Sources */,
 				DC377ADD2C46506300C3C0E1 /* HSTextField.swift in Sources */,
 				DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */,
 			);
