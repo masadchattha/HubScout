@@ -50,6 +50,7 @@ private extension SearchVC {
 
     func configureTextField() {
         view.addSubview(usernameTextField)
+        usernameTextField.delegate = self
 
         NSLayoutConstraint.activate([
             usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
@@ -82,3 +83,16 @@ extension SearchVC {
         view.addGestureRecognizer(tap)
     }
 }
+
+
+// MARK: - UITextFieldDelegate
+
+
+extension SearchVC: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("Return key tapped")
+        return true
+    }
+}
+
