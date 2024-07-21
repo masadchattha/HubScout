@@ -7,7 +7,16 @@
 
 import UIKit
 
+private extension SearchVC {
+
+    enum Constant {
+        static let emptyUsernameErrorTitle = "Empty Username"
+        static let emptyUsernameErrorDescription = "Please enter a username. We need to know who to look for 😃."
+    }
+}
+
 class SearchVC: UIViewController {
+    typealias Alert = (title: String, action: () -> Void)
 
     let logoImageView = UIImageView()
     let usernameTextField = HSTextField()
@@ -83,11 +92,15 @@ private extension SearchVC {
 private extension SearchVC {
 
     @objc func navigateFollowerListVC() {
-        guard isUsernameEntered else { return }
+        guard isUsernameEntered else {
+            presentHSAlertOnMainThread(title: Constant.emptyUsernameErrorTitle, message: Constant.emptyUsernameErrorDescription, buttonTitle: "OK")
+            return
+        }
+
         let followerListVC      = FollowerListVC()
         followerListVC.username = usernameTextField.text
         followerListVC.title    = usernameTextField.text
-         navigationController?.pushViewController(followerListVC, animated: true)
+        navigationController?.pushViewController(followerListVC, animated: true)
     }
 }
 

@@ -23,7 +23,7 @@ class HSTitleLabel: UILabel {
     init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
-        self.font = .systemFont(ofSize: fontSize)
+        self.font = .systemFont(ofSize: fontSize, weight: .bold)
         configure()
     }
 

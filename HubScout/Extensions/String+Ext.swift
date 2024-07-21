@@ -32,6 +32,6 @@ extension String {
 
 
     var isNotBlank: Bool {
-        return rangeOfCharacter(from: .whitespacesAndNewlines) == nil
+        return (rangeOfCharacter(from: .whitespacesAndNewlines) == nil && isNotEmpty)
     }
 }
