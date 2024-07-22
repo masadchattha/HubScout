@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4D2C4E5E300084FCAE /* Follower.swift */; };
+		AD741E502C4E606C0084FCAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4F2C4E606C0084FCAE /* User.swift */; };
 		DC22519B2C4CDD66003C9443 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */; };
 		DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22519D2C4CE511003C9443 /* Collection+Ext.swift */; };
 		DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22519F2C4CE773003C9443 /* String+Ext.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD741E4D2C4E5E300084FCAE /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		AD741E4F2C4E606C0084FCAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		DC22519D2C4CE511003C9443 /* Collection+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
 		DC22519F2C4CE773003C9443 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD741E4C2C4E5DF20084FCAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD741E4D2C4E5E300084FCAE /* Follower.swift */,
+				AD741E4F2C4E606C0084FCAE /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DC22519C2C4CE4D3003C9443 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,7 @@
 		DC377AC12C450FE700C3C0E1 /* HubScout */ = {
 			isa = PBXGroup;
 			children = (
+				AD741E4C2C4E5DF20084FCAE /* Model */,
 				DC2251A92C4DA3E8003C9443 /* Screens */,
 				DC2251AA2C4DA3FD003C9443 /* Custom Views */,
 				DC2251AB2C4DA427003C9443 /* Support */,
@@ -197,12 +211,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */,
+				AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */,
 				DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */,
 				DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */,
 				DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */,
 				DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */,
 				DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */,
 				DC377AD72C463AA500C3C0E1 /* SearchVC.swift in Sources */,
+				AD741E502C4E606C0084FCAE /* User.swift in Sources */,
 				DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */,
 				DC2251A62C4D19C5003C9443 /* HSAlertVC.swift in Sources */,
 				DC22519B2C4CDD66003C9443 /* FollowerListVC.swift in Sources */,
