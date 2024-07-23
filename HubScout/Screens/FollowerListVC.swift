@@ -28,7 +28,7 @@ private extension FollowerListVC {
     func fetchFolowers() {
         NetworkManager.shared.getFollowers(for: username, page: 1) { (followers, errorMessage) in
             guard let followers else {
-                self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: errorMessage!, buttonTitle: "OK")
+                self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: errorMessage!.rawValue, buttonTitle: "OK")
                 return
             }
 
