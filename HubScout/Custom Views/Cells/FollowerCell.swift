@@ -33,14 +33,14 @@ class FollowerCell: UICollectionViewCell {
         translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            avatarImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
 
             usernamaLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12),
-            usernamaLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            usernamaLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+            usernamaLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            usernamaLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             usernamaLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
