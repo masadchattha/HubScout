@@ -16,5 +16,25 @@ class FollowerListVC: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
+        fetchFolowers()
     }
 }
+
+
+// MARK: - Networking Methods
+
+private extension FollowerListVC {
+
+    func fetchFolowers() {
+        NetworkManager.shared.getFollowers(for: username, page: 1) { (followers, errorMessage) in
+            guard let followers else {
+                self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: errorMessage!, buttonTitle: "OK")
+                return
+            }
+
+            print("Followers.count = ", followers.count)
+            print(followers)
+        }
+    }
+}
+
