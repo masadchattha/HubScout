@@ -26,14 +26,15 @@ class FollowerListVC: UIViewController {
 private extension FollowerListVC {
 
     func fetchFolowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { (followers, errorMessage) in
-            guard let followers else {
-                self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: errorMessage!.rawValue, buttonTitle: "OK")
-                return
-            }
+        NetworkManager.shared.getFollowers(for: username, page: 1) { result in
 
-            print("Followers.count = ", followers.count)
-            print(followers)
+            switch result {
+            case .success(let followers):
+                print(followers)
+
+            case .failure(let error):
+                self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "OK")
+            }
         }
     }
 }
