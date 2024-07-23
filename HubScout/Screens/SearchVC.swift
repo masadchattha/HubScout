@@ -7,29 +7,41 @@
 
 import UIKit
 
+private extension SearchVC {
+
+    enum Constant {
+        static let emptyUsernameErrorTitle = "Empty Username"
+        static let emptyUsernameErrorDescription = "Please enter a username. We need to know who to look for 😃."
+    }
+}
+
 class SearchVC: UIViewController {
+    typealias Alert = (title: String, action: () -> Void)
 
     let logoImageView = UIImageView()
     let usernameTextField = HSTextField()
     let callToActionButton = HSButton(backgrounColor: .systemGreen, title: "Get Followers")
 
+    var isUsernameEntered: Bool { usernameTextField.text!.isNotBlank }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        configureLogoImageView()
+        configureTextField()
+        configureCallToActionButton()
+        createDismissKeyboardTapGesture()
     }
 
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-        configureLogoImageView()
-        configureTextField()
-        configureButton()
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 
 
-// MARK: - Configuration Methods
+// MARK: - UI Configuration Methods
 
 private extension SearchVC {
 
@@ -49,6 +61,7 @@ private extension SearchVC {
 
     func configureTextField() {
         view.addSubview(usernameTextField)
+        usernameTextField.delegate = self
 
         NSLayoutConstraint.activate([
             usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
@@ -61,13 +74,56 @@ private extension SearchVC {
 
     func configureCallToActionButton() {
         view.addSubview(callToActionButton)
+        callToActionButton.addTarget(self, action: #selector(navigateFollowerListVC), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
-            callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
+            callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             callToActionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+}
+
+
+// MARK: - Navigation Method
+
+
+private extension SearchVC {
+
+    @objc func navigateFollowerListVC() {
+        guard isUsernameEntered else {
+            presentHSAlertOnMainThread(title: Constant.emptyUsernameErrorTitle, message: Constant.emptyUsernameErrorDescription, buttonTitle: "OK")
+            return
+        }
+
+        let followerListVC      = FollowerListVC()
+        followerListVC.username = usernameTextField.text
+        followerListVC.title    = usernameTextField.text
+        navigationController?.pushViewController(followerListVC, animated: true)
+    }
+}
+
+
+// MARK: - GestureRecognizer Methods
+
+extension SearchVC {
+
+    func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+}
+
+
+// MARK: - UITextFieldDelegate
+
+
+extension SearchVC: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("Return key tapped")
+        return true
     }
 }
 

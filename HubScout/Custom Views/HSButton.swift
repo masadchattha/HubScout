@@ -22,7 +22,7 @@ class HSButton: UIButton {
 
     init(backgrounColor: UIColor, title: String) {
         super.init(frame: .zero)
-        self.titleLabel?.backgroundColor = backgrounColor
+        self.backgroundColor = backgrounColor
         self.setTitle(title, for: .normal)
         configure()
     }
