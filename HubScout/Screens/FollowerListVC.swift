@@ -9,14 +9,34 @@ import UIKit
 
 class FollowerListVC: UIViewController {
 
+    var collectionView: UICollectionView!
     var username: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewController()
+        configureCollectionView()
+        fetchFolowers()
+    }
+}
+
+
+// MARK: - UI configuration Methods
+
+extension FollowerListVC {
+
+    func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
-        fetchFolowers()
+    }
+
+
+    func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        view.addSubview(collectionView)
+        collectionView.backgroundColor = .systemPink
+        collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
 }
 
