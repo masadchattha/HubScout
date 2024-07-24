@@ -20,6 +20,7 @@
 		DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */; };
 		DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */; };
 		DC2251B12C4F5D2E003C9443 /* NetworkErrorMesssage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */; };
+		DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251B22C50ABD7003C9443 /* UIHelper.swift */; };
 		DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */; };
 		DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */; };
 		DC377ACC2C450FE800C3C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorMesssage.swift; sourceTree = "<group>"; };
+		DC2251B22C50ABD7003C9443 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		DC377ABF2C450FE700C3C0E1 /* HubScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */,
+				DC2251B22C50ABD7003C9443 /* UIHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */,
 				AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */,
 				DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */,
+				DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */,
 				DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */,
 				DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */,
 				DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */,

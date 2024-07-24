@@ -11,9 +11,7 @@ import UIKit
 // MARK: - Enums
 
 private extension FollowerListVC {
-    enum Section {
-        case main
-    }
+    enum Section { case main }
 }
 
 
@@ -49,7 +47,7 @@ extension FollowerListVC {
 
 
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
