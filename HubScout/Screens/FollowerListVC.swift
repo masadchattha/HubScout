@@ -7,16 +7,32 @@
 
 import UIKit
 
+
+// MARK: - Enums
+
+private extension FollowerListVC {
+    enum Section {
+        case main
+    }
+}
+
+
+// MARK: - FollowerListVC
+
 class FollowerListVC: UIViewController {
 
-    var collectionView: UICollectionView!
     var username: String!
+    private var followers: [Follower] = []
+
+    private var collectionView: UICollectionView!
+    private var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
         fetchFolowers()
+        configureDataSource()
     }
 }
 
@@ -35,7 +51,6 @@ extension FollowerListVC {
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .systemPink
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
 
@@ -55,6 +70,28 @@ extension FollowerListVC {
 }
 
 
+// MARK: - CollectionView Helper Methods
+
+private extension FollowerListVC {
+
+    func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
+            cell.set(follwer: follower)
+            return cell
+        })
+    }
+
+
+    func updateDate() {
+        var snapshop = NSDiffableDataSourceSnapshot<Section, Follower>()
+        snapshop.appendSections([.main])
+        snapshop.appendItems(followers)
+        dataSource.apply(snapshop) //  default 'animatingDifferences' is true
+    }
+}
+
+
 // MARK: - Networking Methods
 
 private extension FollowerListVC {
@@ -64,7 +101,8 @@ private extension FollowerListVC {
 
             switch result {
             case .success(let followers):
-                print(followers)
+                self.followers = followers
+                self.updateDate()
 
             case .failure(let error):
                 self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "OK")
