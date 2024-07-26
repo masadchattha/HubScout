@@ -119,6 +119,7 @@ private extension FollowerListVC {
         showLoadingView()
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             guard let self else { return }
+            dismissLoadingView() 
 
             switch result {
             case .success(let followers):
