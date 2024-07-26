@@ -21,6 +21,8 @@ class FollowerListVC: UIViewController {
 
     var username: String!
     private var followers: [Follower] = []
+    var page = 1
+    var hasMoreFollowers = true
 
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -29,7 +31,7 @@ class FollowerListVC: UIViewController {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        fetchFolowers()
+        getFollowers(username: username, page: page)
         configureDataSource()
     }
 }
@@ -49,6 +51,7 @@ extension FollowerListVC {
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
+        collectionView.delegate = self
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
 
@@ -90,17 +93,36 @@ private extension FollowerListVC {
 }
 
 
+// MARK: - UICollectionViewDelegate
+
+extension FollowerListVC: UICollectionViewDelegate {
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY         = scrollView.contentOffset.y
+        let contentHeight   = scrollView.contentSize.height
+        let height          = scrollView.frame.size.height
+
+        if offsetY > (contentHeight - height) { // Scrolled to the bottom of screen
+            guard hasMoreFollowers else { return }
+            page += 1
+            getFollowers(username: username, page: page)
+        }
+    }
+}
+
+
 // MARK: - Networking Methods
 
 private extension FollowerListVC {
 
-    func fetchFolowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result in
+    func getFollowers(username: String, page: Int) {
+        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             guard let self else { return }
 
             switch result {
             case .success(let followers):
-                self.followers = followers
+                if followers.count < 100 { hasMoreFollowers = false }
+                self.followers.append(contentsOf: followers)
                 self.updateDate()
 
             case .failure(let error):
