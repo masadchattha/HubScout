@@ -26,6 +26,7 @@ class FollowerListVC: UIViewController {
             DispatchQueue.main.async { self.showEmptyStateView(with: "This user doesn't have any followers 😞", in: self.view) }
         }
     }
+    private var filteredFollowers: [Follower] = []
     var page = 1
     var hasMoreFollowers = true
 
@@ -35,6 +36,7 @@ class FollowerListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        configureSearchController()
         configureCollectionView()
         getFollowers(username: username, page: page)
         configureDataSource()
@@ -73,6 +75,15 @@ extension FollowerListVC {
         flowLayout.itemSize             = CGSize(width: itemWidth, height: itemWidth + 40)
         return flowLayout
     }
+
+
+    func configureSearchController() {
+        let searchController                    = UISearchController()
+        searchController.searchResultsUpdater   = self
+        searchController.searchBar.delegate     = self
+        searchController.searchBar.placeholder  = "Search for a username"
+        navigationItem.searchController         = searchController
+    }
 }
 
 
@@ -89,7 +100,7 @@ private extension FollowerListVC {
     }
 
 
-    func updateDate() {
+    func updateDate(on followers: [Follower]) {
         var snapshop = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshop.appendSections([.main])
         snapshop.appendItems(followers)
@@ -130,7 +141,7 @@ private extension FollowerListVC {
             case .success(let followers):
                 if followers.count < 100 { hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
-                self.updateDate()
+                self.updateDate(on: self.followers)
 
             case .failure(let error):
                 self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "OK")
@@ -139,3 +150,19 @@ private extension FollowerListVC {
     }
 }
 
+
+// MARK: - UISearchResultsUpdating
+
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, filter.isNotEmpty else { return }
+        filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
+        updateDate(on: filteredFollowers)
+    }
+
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        updateDate(on: followers)
+    }
+}
