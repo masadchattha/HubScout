@@ -8,7 +8,7 @@
 import UIKit
 
 class HSEmptyStateView: UIView {
-    let titleLabel = HSTitleLabel(textAlignment: .left, fontSize: 20)
+    let messageLabel = HSTitleLabel(textAlignment: .center, fontSize: 28)
     let logoImageView = UIImageView(image: .emptyStateLogo)
 
     override init(frame: CGRect) {
@@ -22,33 +22,34 @@ class HSEmptyStateView: UIView {
     }
 
 
-    init(title: String) {
+    init(message: String) {
         super.init(frame: .zero)
-        titleLabel.text = title
+        messageLabel.text = message
         configure()
     }
 
 
     func configure() {
-        addSubview(titleLabel)
+        addSubview(messageLabel)
         addSubview(logoImageView)
-
-        translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        messageLabel.numberOfLines  = 0
+        messageLabel.textColor      = .secondaryLabel
+        
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        // Label
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 150),
-            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            messageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -170),
+            messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
+            messageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+
+            logoImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
+            logoImageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
+            logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 170),
+            logoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 40)
         ])
 
-        // ImageView
-        NSLayoutConstraint.activate([
-            logoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 48),
-            logoImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 48),
-            logoImageView.heightAnchor.constraint(equalToConstant: bounds.size.width),
-            logoImageView.widthAnchor.constraint(equalTo: logoImageView.widthAnchor)
-        ])
+        
     }
 }
