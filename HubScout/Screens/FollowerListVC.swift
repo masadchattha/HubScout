@@ -27,6 +27,8 @@ class FollowerListVC: UIViewController {
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
 
+    let emptyStateView = HSEmptyStateView(title: "This user doesn't have any followers 😞")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -67,6 +69,19 @@ extension FollowerListVC {
         flowLayout.sectionInset         = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
         flowLayout.itemSize             = CGSize(width: itemWidth, height: itemWidth + 40)
         return flowLayout
+    }
+
+    func configureEmptyStateView() {
+        guard followers.isEmpty else { return }
+        view.addSubview(emptyStateView)
+
+        NSLayoutConstraint.activate([
+            emptyStateView.topAnchor.constraint(equalTo: view.topAnchor),
+            emptyStateView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyStateView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emptyStateView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            
+        ])
     }
 }
 
@@ -126,9 +141,11 @@ private extension FollowerListVC {
                 if followers.count < 100 { hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
                 self.updateDate()
+                self.configureEmptyStateView()
 
             case .failure(let error):
                 self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "OK")
+                self.configureEmptyStateView()
             }
         }
     }
