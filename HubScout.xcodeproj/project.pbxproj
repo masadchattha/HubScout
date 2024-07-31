@@ -20,6 +20,7 @@
 		DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */; };
 		DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */; };
 		DC2251B12C4F5D2E003C9443 /* NetworkErrorMesssage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */; };
+		DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251B22C50ABD7003C9443 /* UIHelper.swift */; };
 		DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */; };
 		DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */; };
 		DC377ACC2C450FE800C3C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */; };
@@ -28,6 +29,8 @@
 		DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */; };
 		DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */; };
 		DC377ADD2C46506300C3C0E1 /* HSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377ADC2C46506300C3C0E1 /* HSTextField.swift */; };
+		DCDEBCFC2C588F55003319E8 /* HSEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */; };
+		DCDEBD002C59DD7B003319E8 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBCFF2C59DD7B003319E8 /* UserInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,7 @@
 		DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorMesssage.swift; sourceTree = "<group>"; };
+		DC2251B22C50ABD7003C9443 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		DC377ABF2C450FE700C3C0E1 /* HubScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSButton.swift; sourceTree = "<group>"; };
 		DC377ADC2C46506300C3C0E1 /* HSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSTextField.swift; sourceTree = "<group>"; };
+		DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSEmptyStateView.swift; sourceTree = "<group>"; };
+		DCDEBCFF2C59DD7B003319E8 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 				DC377AD62C463AA500C3C0E1 /* SearchVC.swift */,
 				DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */,
 				DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */,
+				DCDEBCFF2C59DD7B003319E8 /* UserInfoVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -107,13 +114,13 @@
 		DC2251AA2C4DA3FD003C9443 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				DCDEBCFA2C588E9E003319E8 /* ViewControllers */,
+				DCDEBCF92C588E94003319E8 /* ImagesViews */,
+				DCDEBCF82C588E78003319E8 /* TextFields */,
+				DCDEBCF72C588E70003319E8 /* Labels */,
+				DCDEBCF62C588E6C003319E8 /* Buttons */,
+				DCDEBCF52C588E65003319E8 /* Views */,
 				ADF0C44D2C4FEEC7009DB160 /* Cells */,
-				DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */,
-				DC377ADC2C46506300C3C0E1 /* HSTextField.swift */,
-				DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */,
-				DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */,
-				DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */,
-				ADF0C44F2C4FEF05009DB160 /* HSAvatarImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */,
+				DC2251B22C50ABD7003C9443 /* UIHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -174,6 +182,55 @@
 				DC377AD02C450FE800C3C0E1 /* Info.plist */,
 			);
 			path = HubScout;
+			sourceTree = "<group>";
+		};
+		DCDEBCF52C588E65003319E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DCDEBCF62C588E6C003319E8 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		DCDEBCF72C588E70003319E8 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */,
+				DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		DCDEBCF82C588E78003319E8 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				DC377ADC2C46506300C3C0E1 /* HSTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		DCDEBCF92C588E94003319E8 /* ImagesViews */ = {
+			isa = PBXGroup;
+			children = (
+				ADF0C44F2C4FEF05009DB160 /* HSAvatarImageView.swift */,
+			);
+			path = ImagesViews;
+			sourceTree = "<group>";
+		};
+		DCDEBCFA2C588E9E003319E8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,8 +306,10 @@
 				DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */,
 				AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */,
 				DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */,
+				DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */,
 				DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */,
 				DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */,
+				DCDEBCFC2C588F55003319E8 /* HSEmptyStateView.swift in Sources */,
 				DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */,
 				DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */,
 				DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */,
@@ -265,6 +324,7 @@
 				DC2251A42C4D18DB003C9443 /* HSBodyLabel.swift in Sources */,
 				DC377ADD2C46506300C3C0E1 /* HSTextField.swift in Sources */,
 				DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */,
+				DCDEBD002C59DD7B003319E8 /* UserInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

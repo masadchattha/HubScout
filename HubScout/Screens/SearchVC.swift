@@ -122,7 +122,7 @@ extension SearchVC {
 extension SearchVC: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("Return key tapped")
+        navigateFollowerListVC()
         return true
     }
 }
