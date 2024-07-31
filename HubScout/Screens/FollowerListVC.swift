@@ -29,6 +29,7 @@ class FollowerListVC: UIViewController {
     private var filteredFollowers: [Follower] = []
     var page = 1
     var hasMoreFollowers = true
+    var isSearching: Bool = false
 
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -123,6 +124,16 @@ extension FollowerListVC: UICollectionViewDelegate {
             page += 1
             getFollowers(username: username, page: page)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let actingArray = isSearching ? filteredFollowers : followers
+        let user = actingArray[indexPath.item]
+
+        let destVC = UserInfoVC()
+        destVC.username = user.login
+        let destNC = UINavigationController(rootViewController: destVC)
+        present(destNC, animated: true)
     }
 }
 
