@@ -125,15 +125,16 @@ extension FollowerListVC: UICollectionViewDelegate {
             getFollowers(username: username, page: page)
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let actingArray = isSearching ? filteredFollowers : followers
-        let user = actingArray[indexPath.item]
 
-        let destVC = UserInfoVC()
-        destVC.username = user.login
-        let destNC = UINavigationController(rootViewController: destVC)
-        present(destNC, animated: true)
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray        = isSearching ? filteredFollowers : followers
+        let follower           = activeArray[indexPath.item]
+
+        let destVC             = UserInfoVC()
+        destVC.username        = follower.login
+        let navController      = UINavigationController(rootViewController: destVC)
+        present(navController , animated: true)
     }
 }
 
@@ -168,12 +169,14 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
 
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, filter.isNotEmpty else { return }
+        isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateDate(on: filteredFollowers)
     }
 
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
         updateDate(on: followers)
     }
 }

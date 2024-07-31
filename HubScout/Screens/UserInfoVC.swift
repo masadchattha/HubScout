@@ -15,7 +15,7 @@ class UserInfoVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureNavBar()
-
+        print("Username: ", username)
     }
 
 
