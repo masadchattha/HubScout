@@ -17,7 +17,6 @@ class UserInfoVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureNavBar()
-        addSubViews()
         layoutUI()
         getUserInfo(for: username)
     }
@@ -51,6 +50,7 @@ class UserInfoVC: UIViewController {
 
 
     func layoutUI() {
+        view.addSubview(headerView)
         headerView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
@@ -59,11 +59,6 @@ class UserInfoVC: UIViewController {
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 180)
         ])
-    }
-
-
-    func addSubViews() {
-        view.addSubview(headerView)
     }
 
 
