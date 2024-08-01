@@ -31,6 +31,9 @@
 		DCDEBCFC2C588F55003319E8 /* HSEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */; };
 		DCDEBD002C59DD7B003319E8 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBCFF2C59DD7B003319E8 /* UserInfoVC.swift */; };
 		DCDEBD022C5AB1EB003319E8 /* HSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBD012C5AB1EA003319E8 /* HSError.swift */; };
+		DCDEBD042C5B27AC003319E8 /* HSUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBD032C5B27AC003319E8 /* HSUserInfoHeaderVC.swift */; };
+		DCDEBD062C5B27F1003319E8 /* HSSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBD052C5B27F1003319E8 /* HSSecondaryTitleLabel.swift */; };
+		DCDEBD082C5B2E92003319E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBD072C5B2E92003319E8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSEmptyStateView.swift; sourceTree = "<group>"; };
 		DCDEBCFF2C59DD7B003319E8 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		DCDEBD012C5AB1EA003319E8 /* HSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HSError.swift; path = HubScout/Utils/HSError.swift; sourceTree = SOURCE_ROOT; };
+		DCDEBD032C5B27AC003319E8 /* HSUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSUserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		DCDEBD052C5B27F1003319E8 /* HSSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		DCDEBD072C5B2E92003319E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 			children = (
 				DCDEBD012C5AB1EA003319E8 /* HSError.swift */,
 				DC2251B22C50ABD7003C9443 /* UIHelper.swift */,
+				DCDEBD072C5B2E92003319E8 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 			children = (
 				DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */,
 				DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */,
+				DCDEBD052C5B27F1003319E8 /* HSSecondaryTitleLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 		DCDEBCFA2C588E9E003319E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DCDEBD032C5B27AC003319E8 /* HSUserInfoHeaderVC.swift */,
 				DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */,
 			);
 			path = ViewControllers;
@@ -303,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDEBD082C5B2E92003319E8 /* Constants.swift in Sources */,
 				DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */,
 				AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */,
 				DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */,
@@ -314,7 +324,9 @@
 				DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */,
 				DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */,
 				DC377AD72C463AA500C3C0E1 /* SearchVC.swift in Sources */,
+				DCDEBD062C5B27F1003319E8 /* HSSecondaryTitleLabel.swift in Sources */,
 				AD741E502C4E606C0084FCAE /* User.swift in Sources */,
+				DCDEBD042C5B27AC003319E8 /* HSUserInfoHeaderVC.swift in Sources */,
 				ADF0C44E2C4FEEC7009DB160 /* FollowerCell.swift in Sources */,
 				DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */,
 				DC2251A62C4D19C5003C9443 /* HSAlertVC.swift in Sources */,
