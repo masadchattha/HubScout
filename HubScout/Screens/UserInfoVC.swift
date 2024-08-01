@@ -16,36 +16,30 @@ class UserInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        configureNavBar()
+        configureVC()
         layoutUI()
-        getUserInfo(for: username)
+        getUserInfo()
     }
+}
 
 
-    func configureNavBar() {
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
-        navigationItem.rightBarButtonItem = doneBarButton
-    }
+// MARK: - Action Methods
 
+extension UserInfoVC {
 
     @objc func dismissVC() {
         dismiss(animated: true)
     }
+}
 
 
-    func getUserInfo(for username: String) {
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self else { return }
+// MARK: - Setup Methods
 
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async {
-                    self.add(childVC: HSUserInfoHeaderVC(user: user), to: self.headerView)
-                }
-            case .failure(let error):
-                self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
-            }
-        }
+private extension UserInfoVC {
+
+    func configureVC() {
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
+        navigationItem.rightBarButtonItem = doneBarButton
     }
 
 
@@ -69,3 +63,25 @@ class UserInfoVC: UIViewController {
         childVC.didMove(toParent: self)
     }
 }
+
+
+// MARK: - Netwroking Methods
+
+private extension UserInfoVC {
+
+    func getUserInfo() {
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self else { return }
+
+            switch result {
+            case .success(let user):
+                DispatchQueue.main.async {
+                    self.add(childVC: HSUserInfoHeaderVC(user: user), to: self.headerView)
+                }
+            case .failure(let error):
+                self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
+    }
+}
+
