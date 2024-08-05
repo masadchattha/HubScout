@@ -62,9 +62,6 @@ private extension UserInfoVC {
             ])
         }
 
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemBlue
-
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 180),
@@ -99,6 +96,8 @@ private extension UserInfoVC {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.add(childVC: HSUserInfoHeaderVC(user: user), to: self.headerView)
+                    self.add(childVC: HSRepoItemVC(user: user), to: self.itemViewOne)
+                    self.add(childVC: HSFollowerItemVC(user: user), to: self.itemViewTwo)
                 }
             case .failure(let error):
                 self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")

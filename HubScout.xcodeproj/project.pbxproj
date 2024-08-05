@@ -21,6 +21,8 @@
 		DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */; };
 		DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */; };
 		DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251B22C50ABD7003C9443 /* UIHelper.swift */; };
+		DC307C052C6133750002E910 /* HSRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC307C042C6133750002E910 /* HSRepoItemVC.swift */; };
+		DC307C072C6135E20002E910 /* HSFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC307C062C6135E20002E910 /* HSFollowerItemVC.swift */; };
 		DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */; };
 		DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */; };
 		DC377ACC2C450FE800C3C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DC2251B22C50ABD7003C9443 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		DC307C042C6133750002E910 /* HSRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSRepoItemVC.swift; sourceTree = "<group>"; };
+		DC307C062C6135E20002E910 /* HSFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSFollowerItemVC.swift; sourceTree = "<group>"; };
 		DC377ABF2C450FE700C3C0E1 /* HubScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +168,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		DC307C082C6138960002E910 /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */,
+				DC307C062C6135E20002E910 /* HSFollowerItemVC.swift */,
+				DC307C042C6133750002E910 /* HSRepoItemVC.swift */,
+			);
+			path = ItemInfoVCs;
+			sourceTree = "<group>";
+		};
 		DC377AB62C450FE700C3C0E1 = {
 			isa = PBXGroup;
 			children = (
@@ -241,9 +255,9 @@
 		DCDEBCFA2C588E9E003319E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DC307C082C6138960002E910 /* ItemInfoVCs */,
 				DCDEBD032C5B27AC003319E8 /* HSUserInfoHeaderVC.swift */,
 				DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */,
-				ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -324,10 +338,12 @@
 				DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */,
 				DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */,
 				DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */,
+				DC307C072C6135E20002E910 /* HSFollowerItemVC.swift in Sources */,
 				DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */,
 				DCDEBCFC2C588F55003319E8 /* HSEmptyStateView.swift in Sources */,
 				DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */,
 				DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */,
+				DC307C052C6133750002E910 /* HSRepoItemVC.swift in Sources */,
 				DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */,
 				DC377AD72C463AA500C3C0E1 /* SearchVC.swift in Sources */,
 				DCDEBD062C5B27F1003319E8 /* HSSecondaryTitleLabel.swift in Sources */,
