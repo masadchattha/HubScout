@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4D2C4E5E300084FCAE /* Follower.swift */; };
 		AD741E502C4E606C0084FCAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4F2C4E606C0084FCAE /* User.swift */; };
+		ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */; };
 		ADDC37202C6100840093CFE9 /* HSItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */; };
 		ADF0C44E2C4FEEC7009DB160 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C44C2C4FEEC7009DB160 /* FollowerCell.swift */; };
 		ADF0C4502C4FEF05009DB160 /* HSAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C44F2C4FEF05009DB160 /* HSAvatarImageView.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		AD741E4D2C4E5E300084FCAE /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		AD741E4F2C4E606C0084FCAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSItemInfoVC.swift; sourceTree = "<group>"; };
 		ADF0C44C2C4FEEC7009DB160 /* FollowerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		ADF0C44F2C4FEF05009DB160 /* HSAvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSAvatarImageView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				DC22519F2C4CE773003C9443 /* String+Ext.swift */,
 				DC22519D2C4CE511003C9443 /* Collection+Ext.swift */,
 				DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */,
+				ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				DC307C072C6135E20002E910 /* HSFollowerItemVC.swift in Sources */,
 				DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */,
 				DCDEBCFC2C588F55003319E8 /* HSEmptyStateView.swift in Sources */,
+				ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */,
 				DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */,
 				DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */,
 				DC307C052C6133750002E910 /* HSRepoItemVC.swift in Sources */,
