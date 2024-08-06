@@ -98,7 +98,31 @@ extension FollowerListVC {
 private extension FollowerListVC {
 
     @objc func addButtonTapped() {
-        
+        showLoadingView()
+
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self else { return }
+            self.dismissLoadingView()
+
+            switch result {
+            case .success(let user):
+                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+
+                PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
+                    guard let self else { return }
+
+                    guard let error else {
+                        self.presentHSAlertOnMainThread(title: "Success!", message: "You've successfully favorited this user 🎉", buttonTitle: "Hooray!")
+                        return
+                    }
+
+                    self.presentHSAlertOnMainThread(title: "Unable to favorite", message: error.rawValue, buttonTitle: "Ok")
+                }
+
+            case .failure(let error):
+                self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
     }
 }
 
