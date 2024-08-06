@@ -24,6 +24,7 @@
 		DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251B22C50ABD7003C9443 /* UIHelper.swift */; };
 		DC307C052C6133750002E910 /* HSRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC307C042C6133750002E910 /* HSRepoItemVC.swift */; };
 		DC307C072C6135E20002E910 /* HSFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC307C062C6135E20002E910 /* HSFollowerItemVC.swift */; };
+		DC307C0A2C628C750002E910 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC307C092C628C750002E910 /* PersistenceManager.swift */; };
 		DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */; };
 		DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */; };
 		DC377ACC2C450FE800C3C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		DC2251B22C50ABD7003C9443 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		DC307C042C6133750002E910 /* HSRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSRepoItemVC.swift; sourceTree = "<group>"; };
 		DC307C062C6135E20002E910 /* HSFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSFollowerItemVC.swift; sourceTree = "<group>"; };
+		DC307C092C628C750002E910 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		DC377ABF2C450FE700C3C0E1 /* HubScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */,
+				DC307C092C628C750002E910 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */,
 				AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */,
 				DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */,
+				DC307C0A2C628C750002E910 /* PersistenceManager.swift in Sources */,
 				DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */,
 				DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */,
 				DC307C072C6135E20002E910 /* HSFollowerItemVC.swift in Sources */,
