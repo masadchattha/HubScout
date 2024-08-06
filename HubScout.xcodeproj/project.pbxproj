@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4D2C4E5E300084FCAE /* Follower.swift */; };
 		AD741E502C4E606C0084FCAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4F2C4E606C0084FCAE /* User.swift */; };
+		ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */; };
+		ADDC37202C6100840093CFE9 /* HSItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */; };
 		ADF0C44E2C4FEEC7009DB160 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C44C2C4FEEC7009DB160 /* FollowerCell.swift */; };
 		ADF0C4502C4FEF05009DB160 /* HSAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C44F2C4FEF05009DB160 /* HSAvatarImageView.swift */; };
 		DC22519B2C4CDD66003C9443 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */; };
@@ -19,8 +21,10 @@
 		DC2251A62C4D19C5003C9443 /* HSAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */; };
 		DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */; };
 		DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */; };
-		DC2251B12C4F5D2E003C9443 /* NetworkErrorMesssage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */; };
 		DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2251B22C50ABD7003C9443 /* UIHelper.swift */; };
+		DC307C052C6133750002E910 /* HSRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC307C042C6133750002E910 /* HSRepoItemVC.swift */; };
+		DC307C072C6135E20002E910 /* HSFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC307C062C6135E20002E910 /* HSFollowerItemVC.swift */; };
+		DC307C0A2C628C750002E910 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC307C092C628C750002E910 /* PersistenceManager.swift */; };
 		DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */; };
 		DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */; };
 		DC377ACC2C450FE800C3C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC377ACB2C450FE800C3C0E1 /* Assets.xcassets */; };
@@ -29,13 +33,20 @@
 		DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */; };
 		DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */; };
 		DC377ADD2C46506300C3C0E1 /* HSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC377ADC2C46506300C3C0E1 /* HSTextField.swift */; };
+		DCA8C1C72C5C5F3F000B05B7 /* HSItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA8C1C62C5C5F3F000B05B7 /* HSItemInfoView.swift */; };
 		DCDEBCFC2C588F55003319E8 /* HSEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */; };
 		DCDEBD002C59DD7B003319E8 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBCFF2C59DD7B003319E8 /* UserInfoVC.swift */; };
+		DCDEBD022C5AB1EB003319E8 /* HSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBD012C5AB1EA003319E8 /* HSError.swift */; };
+		DCDEBD042C5B27AC003319E8 /* HSUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBD032C5B27AC003319E8 /* HSUserInfoHeaderVC.swift */; };
+		DCDEBD062C5B27F1003319E8 /* HSSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBD052C5B27F1003319E8 /* HSSecondaryTitleLabel.swift */; };
+		DCDEBD082C5B2E92003319E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDEBD072C5B2E92003319E8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD741E4D2C4E5E300084FCAE /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		AD741E4F2C4E606C0084FCAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSItemInfoVC.swift; sourceTree = "<group>"; };
 		ADF0C44C2C4FEEC7009DB160 /* FollowerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		ADF0C44F2C4FEF05009DB160 /* HSAvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSAvatarImageView.swift; sourceTree = "<group>"; };
 		DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
@@ -46,8 +57,10 @@
 		DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAlertVC.swift; sourceTree = "<group>"; };
 		DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorMesssage.swift; sourceTree = "<group>"; };
 		DC2251B22C50ABD7003C9443 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		DC307C042C6133750002E910 /* HSRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSRepoItemVC.swift; sourceTree = "<group>"; };
+		DC307C062C6135E20002E910 /* HSFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSFollowerItemVC.swift; sourceTree = "<group>"; };
+		DC307C092C628C750002E910 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		DC377ABF2C450FE700C3C0E1 /* HubScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC377AC22C450FE700C3C0E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC377AC42C450FE700C3C0E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +71,13 @@
 		DC377AD82C463ADF00C3C0E1 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		DC377ADA2C4646EF00C3C0E1 /* HSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSButton.swift; sourceTree = "<group>"; };
 		DC377ADC2C46506300C3C0E1 /* HSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSTextField.swift; sourceTree = "<group>"; };
+		DCA8C1C62C5C5F3F000B05B7 /* HSItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSItemInfoView.swift; sourceTree = "<group>"; };
 		DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSEmptyStateView.swift; sourceTree = "<group>"; };
 		DCDEBCFF2C59DD7B003319E8 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		DCDEBD012C5AB1EA003319E8 /* HSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HSError.swift; path = HubScout/Utils/HSError.swift; sourceTree = SOURCE_ROOT; };
+		DCDEBD032C5B27AC003319E8 /* HSUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSUserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		DCDEBD052C5B27F1003319E8 /* HSSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		DCDEBD072C5B2E92003319E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +114,7 @@
 				DC22519F2C4CE773003C9443 /* String+Ext.swift */,
 				DC22519D2C4CE511003C9443 /* Collection+Ext.swift */,
 				DC2251A72C4D701C003C9443 /* UIViewController+Ext.swift */,
+				ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -140,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2251AD2C4F40F5003C9443 /* NetworkManager.swift */,
+				DC307C092C628C750002E910 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -147,10 +167,21 @@
 		DC2251AF2C4F5D02003C9443 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DC2251B02C4F5D2E003C9443 /* NetworkErrorMesssage.swift */,
+				DCDEBD012C5AB1EA003319E8 /* HSError.swift */,
 				DC2251B22C50ABD7003C9443 /* UIHelper.swift */,
+				DCDEBD072C5B2E92003319E8 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DC307C082C6138960002E910 /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */,
+				DC307C062C6135E20002E910 /* HSFollowerItemVC.swift */,
+				DC307C042C6133750002E910 /* HSRepoItemVC.swift */,
+			);
+			path = ItemInfoVCs;
 			sourceTree = "<group>";
 		};
 		DC377AB62C450FE700C3C0E1 = {
@@ -188,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */,
+				DCA8C1C62C5C5F3F000B05B7 /* HSItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +237,7 @@
 			children = (
 				DC2251A12C4D134F003C9443 /* HSTitleLabel.swift */,
 				DC2251A32C4D18DB003C9443 /* HSBodyLabel.swift */,
+				DCDEBD052C5B27F1003319E8 /* HSSecondaryTitleLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -228,6 +261,8 @@
 		DCDEBCFA2C588E9E003319E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DC307C082C6138960002E910 /* ItemInfoVCs */,
+				DCDEBD032C5B27AC003319E8 /* HSUserInfoHeaderVC.swift */,
 				DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */,
 			);
 			path = ViewControllers;
@@ -303,25 +338,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDEBD082C5B2E92003319E8 /* Constants.swift in Sources */,
 				DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */,
 				AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */,
 				DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */,
+				DC307C0A2C628C750002E910 /* PersistenceManager.swift in Sources */,
 				DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */,
 				DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */,
+				DC307C072C6135E20002E910 /* HSFollowerItemVC.swift in Sources */,
 				DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */,
 				DCDEBCFC2C588F55003319E8 /* HSEmptyStateView.swift in Sources */,
+				ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */,
 				DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */,
 				DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */,
+				DC307C052C6133750002E910 /* HSRepoItemVC.swift in Sources */,
 				DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */,
 				DC377AD72C463AA500C3C0E1 /* SearchVC.swift in Sources */,
-				DC2251B12C4F5D2E003C9443 /* NetworkErrorMesssage.swift in Sources */,
+				DCDEBD062C5B27F1003319E8 /* HSSecondaryTitleLabel.swift in Sources */,
 				AD741E502C4E606C0084FCAE /* User.swift in Sources */,
+				DCDEBD042C5B27AC003319E8 /* HSUserInfoHeaderVC.swift in Sources */,
 				ADF0C44E2C4FEEC7009DB160 /* FollowerCell.swift in Sources */,
+				DCA8C1C72C5C5F3F000B05B7 /* HSItemInfoView.swift in Sources */,
 				DC377AC32C450FE700C3C0E1 /* AppDelegate.swift in Sources */,
 				DC2251A62C4D19C5003C9443 /* HSAlertVC.swift in Sources */,
+				DCDEBD022C5AB1EB003319E8 /* HSError.swift in Sources */,
 				DC22519B2C4CDD66003C9443 /* FollowerListVC.swift in Sources */,
 				ADF0C4502C4FEF05009DB160 /* HSAvatarImageView.swift in Sources */,
 				DC2251A42C4D18DB003C9443 /* HSBodyLabel.swift in Sources */,
+				ADDC37202C6100840093CFE9 /* HSItemInfoVC.swift in Sources */,
 				DC377ADD2C46506300C3C0E1 /* HSTextField.swift in Sources */,
 				DC377AC52C450FE700C3C0E1 /* SceneDelegate.swift in Sources */,
 				DCDEBD002C59DD7B003319E8 /* UserInfoVC.swift in Sources */,
