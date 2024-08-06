@@ -130,10 +130,15 @@ private extension UserInfoVC {
 
 extension UserInfoVC: UserInfoVCDelegate {
     func didTapGitHubProfile(for user: User) {
-        print("Github profile button tapped")
+        guard let url = URL(string: user.htmlUrl) else {
+            presentHSAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            return
+        }
+        presentSafariVC(with: url)
     }
-    
+
+
     func didTapGetFollowers(for user: User) {
-        print("Get followers button tapped")
+        
     }
 }
