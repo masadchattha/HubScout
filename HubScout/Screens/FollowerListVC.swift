@@ -104,10 +104,10 @@ private extension FollowerListVC {
 
 
     func updateDate(on followers: [Follower]) {
-        var snapshop = NSDiffableDataSourceSnapshot<Section, Follower>()
-        snapshop.appendSections([.main])
-        snapshop.appendItems(followers)
-        dataSource.apply(snapshop) //  default 'animatingDifferences' is true
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(followers)
+        dataSource.apply(snapshot) //  default 'animatingDifferences' is true
     }
 }
 
