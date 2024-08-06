@@ -55,6 +55,9 @@ extension FollowerListVC {
         view.backgroundColor = .systemBackground
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
+
+        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addBarButton
     }
 
 
@@ -86,6 +89,16 @@ extension FollowerListVC {
         searchController.searchBar.delegate     = self
         searchController.searchBar.placeholder  = "Search for a username"
         navigationItem.searchController         = searchController
+    }
+}
+
+
+// MARK: - Action Methods
+
+private extension FollowerListVC {
+
+    @objc func addButtonTapped() {
+        
     }
 }
 

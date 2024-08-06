@@ -26,7 +26,6 @@ class UserInfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         configureVC()
         layoutUI()
         getUserInfo()
@@ -49,6 +48,7 @@ extension UserInfoVC {
 private extension UserInfoVC {
 
     func configureVC() {
+        view.backgroundColor = .systemBackground
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneBarButton
     }
