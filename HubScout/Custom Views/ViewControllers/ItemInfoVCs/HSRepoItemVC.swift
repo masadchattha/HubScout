@@ -20,4 +20,9 @@ class HSRepoItemVC: HSItemInfoVC {
         itemInfoViewTwo.set(itemInfoType: .gists, withCount: user.publicGists)
         actionButton.set(backgrounColor: .systemPurple, title: "GitHub Profile")
     }
+
+
+    override func actionButtonTapped() {
+        delegate.didTapGitHubProfile(for: user)
+    }
 }

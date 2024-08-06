@@ -7,8 +7,13 @@
 
 import UIKit
 
-class UserInfoVC: UIViewController {
+protocol UserInfoVCDelegate: AnyObject {
+    func didTapGitHubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
+}
 
+
+class UserInfoVC: UIViewController {
     let headerView          = UIView()
     let itemViewOne         = UIView()
     let itemViewTwo         = UIView()
@@ -98,16 +103,37 @@ private extension UserInfoVC {
 
             switch result {
             case .success(let user):
-                DispatchQueue.main.async {
-                    self.add(childVC: HSUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.add(childVC: HSRepoItemVC(user: user), to: self.itemViewOne)
-                    self.add(childVC: HSFollowerItemVC(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = "GitHub Since \(user.createdAt.convertToDisplayFormat())"
-                }
+                DispatchQueue.main.async { self.configureUIElements(with: user) }
             case .failure(let error):
                 self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
+
+
+    func configureUIElements(with user: User) {
+        let repoItemVC          = HSRepoItemVC(user: user)
+        repoItemVC.delegate     = self
+
+        let followerItemVC      = HSFollowerItemVC(user: user)
+        followerItemVC.delegate = self
+
+        self.add(childVC: HSUserInfoHeaderVC(user: user), to: self.headerView)
+        self.add(childVC: repoItemVC, to: self.itemViewOne)
+        self.add(childVC: followerItemVC, to: self.itemViewTwo)
+        self.dateLabel.text = "GitHub Since \(user.createdAt.convertToDisplayFormat())"
+    }
 }
 
+
+// MARK: - UserInfoVCDelegate
+
+extension UserInfoVC: UserInfoVCDelegate {
+    func didTapGitHubProfile(for user: User) {
+        print("Github profile button tapped")
+    }
+    
+    func didTapGetFollowers(for user: User) {
+        print("Get followers button tapped")
+    }
+}

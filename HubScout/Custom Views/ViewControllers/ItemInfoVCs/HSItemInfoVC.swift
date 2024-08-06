@@ -15,6 +15,7 @@ class HSItemInfoVC: UIViewController {
     let actionButton    = HSButton()
 
     var user: User!
+    var delegate: UserInfoVCDelegate!
 
     init(user: User!) {
         super.init(nibName: nil, bundle: nil)
@@ -31,6 +32,7 @@ class HSItemInfoVC: UIViewController {
         super.viewDidLoad()
         configureBackgroundView()
         configureStackView()
+        configureActionButton()
         layoutUI()
     }
 
@@ -48,6 +50,14 @@ class HSItemInfoVC: UIViewController {
         stackView.addArrangedSubview(itemInfoViewOne)
         stackView.addArrangedSubview(itemInfoViewTwo)
     }
+
+
+    private func configureActionButton() {
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+    }
+
+
+    @objc func actionButtonTapped() { }
 
 
     private func layoutUI() {
