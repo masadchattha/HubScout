@@ -11,6 +11,7 @@
 		AD741E502C4E606C0084FCAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4F2C4E606C0084FCAE /* User.swift */; };
 		ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */; };
 		ADDC37202C6100840093CFE9 /* HSItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */; };
+		ADE248622C63492F008F6815 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE248612C63492F008F6815 /* FavoriteCell.swift */; };
 		ADF0C44E2C4FEEC7009DB160 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C44C2C4FEEC7009DB160 /* FollowerCell.swift */; };
 		ADF0C4502C4FEF05009DB160 /* HSAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0C44F2C4FEF05009DB160 /* HSAvatarImageView.swift */; };
 		DC22519B2C4CDD66003C9443 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */; };
@@ -47,6 +48,7 @@
 		AD741E4F2C4E606C0084FCAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		ADDC371F2C6100840093CFE9 /* HSItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSItemInfoVC.swift; sourceTree = "<group>"; };
+		ADE248612C63492F008F6815 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		ADF0C44C2C4FEEC7009DB160 /* FollowerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		ADF0C44F2C4FEF05009DB160 /* HSAvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSAvatarImageView.swift; sourceTree = "<group>"; };
 		DC22519A2C4CDD66003C9443 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				ADF0C44C2C4FEEC7009DB160 /* FollowerCell.swift */,
+				ADE248612C63492F008F6815 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */,
 				DC377ADB2C4646EF00C3C0E1 /* HSButton.swift in Sources */,
 				DC22519E2C4CE511003C9443 /* Collection+Ext.swift in Sources */,
+				ADE248622C63492F008F6815 /* FavoriteCell.swift in Sources */,
 				DC307C052C6133750002E910 /* HSRepoItemVC.swift in Sources */,
 				DC377AD92C463ADF00C3C0E1 /* FavoritesListVC.swift in Sources */,
 				DC377AD72C463AA500C3C0E1 /* SearchVC.swift in Sources */,
