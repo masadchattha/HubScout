@@ -8,7 +8,7 @@
 import Foundation
 
 enum PersistenceActionType {
-    case add, rmeove
+    case add, remove
 }
 
 
@@ -36,7 +36,7 @@ enum PersistenceManager {
 
                     retrievedFavorites.append(favorite)
 
-                case .rmeove:
+                case .remove:
                     retrievedFavorites.removeAll { $0.login == favorite.login }
                 }
 
