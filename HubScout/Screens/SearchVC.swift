@@ -24,6 +24,8 @@ class SearchVC: UIViewController {
 
     var isUsernameEntered: Bool { usernameTextField.text!.isNotBlank }
 
+    var logoImageViewTopConstraint: NSLayoutConstraint!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -48,10 +50,13 @@ private extension SearchVC {
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")
+        logoImageView.image = Images.ghLogo
+
+        let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
+        logoImageViewTopConstraint =  logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant)
 
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            logoImageViewTopConstraint,
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
@@ -74,7 +79,7 @@ private extension SearchVC {
 
     func configureCallToActionButton() {
         view.addSubview(callToActionButton)
-        callToActionButton.addTarget(self, action: #selector(navigateFollowerListVC), for: .touchUpInside)
+        callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
@@ -91,7 +96,7 @@ private extension SearchVC {
 
 private extension SearchVC {
 
-    @objc func navigateFollowerListVC() {
+    @objc func pushFollowerListVC() {
         guard isUsernameEntered else {
             presentHSAlertOnMainThread(title: Constant.emptyUsernameErrorTitle, message: Constant.emptyUsernameErrorDescription, buttonTitle: "OK")
             return
@@ -122,7 +127,7 @@ extension SearchVC {
 extension SearchVC: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        navigateFollowerListVC()
+        pushFollowerListVC()
         return true
     }
 }
