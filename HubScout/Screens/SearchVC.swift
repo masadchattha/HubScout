@@ -38,6 +38,7 @@ class SearchVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        usernameTextField.text = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
@@ -101,6 +102,8 @@ private extension SearchVC {
             presentHSAlertOnMainThread(title: Constant.emptyUsernameErrorTitle, message: Constant.emptyUsernameErrorDescription, buttonTitle: "OK")
             return
         }
+
+        usernameTextField.resignFirstResponder()
 
         let followerListVC      = FollowerListVC()
         followerListVC.username = usernameTextField.text
