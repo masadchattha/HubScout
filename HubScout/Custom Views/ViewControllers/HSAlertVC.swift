@@ -9,7 +9,7 @@ import UIKit
 
 class HSAlertVC: UIViewController {
 
-    let containerView = UIView()
+    let containerView = HSAlertContainerView()
     let containerStackView = UIStackView()
     let titleLabel = HSTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = HSBodyLabel(textAlignment: .center)
@@ -59,11 +59,6 @@ private extension HSAlertVC {
 
     func configureContainerView() {
         view.addSubview(containerView)
-        containerView.backgroundColor    = .systemBackground
-        containerView.layer.cornerRadius = 16
-        containerView.layer.borderWidth  = 2
-        containerView.layer.borderColor  = UIColor.white.cgColor
-        containerView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),

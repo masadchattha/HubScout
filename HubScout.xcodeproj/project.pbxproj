@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD00B70B2C6B38490012C446 /* HSAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00B70A2C6B38490012C446 /* HSAlertContainerView.swift */; };
 		AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4D2C4E5E300084FCAE /* Follower.swift */; };
 		AD741E502C4E606C0084FCAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4F2C4E606C0084FCAE /* User.swift */; };
 		ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD00B70A2C6B38490012C446 /* HSAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAlertContainerView.swift; sourceTree = "<group>"; };
 		AD741E4D2C4E5E300084FCAE /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		AD741E4F2C4E606C0084FCAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				DCDEBCFB2C588F55003319E8 /* HSEmptyStateView.swift */,
 				DCA8C1C62C5C5F3F000B05B7 /* HSItemInfoView.swift */,
+				AD00B70A2C6B38490012C446 /* HSAlertContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */,
 				DC2251A02C4CE773003C9443 /* String+Ext.swift in Sources */,
 				DC307C072C6135E20002E910 /* HSFollowerItemVC.swift in Sources */,
+				AD00B70B2C6B38490012C446 /* HSAlertContainerView.swift in Sources */,
 				DC2251AE2C4F40F5003C9443 /* NetworkManager.swift in Sources */,
 				DCDEBCFC2C588F55003319E8 /* HSEmptyStateView.swift in Sources */,
 				ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */,
