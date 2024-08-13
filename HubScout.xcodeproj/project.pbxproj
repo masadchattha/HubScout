@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD00B70B2C6B38490012C446 /* HSAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00B70A2C6B38490012C446 /* HSAlertContainerView.swift */; };
+		AD00B70D2C6B42870012C446 /* HSDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00B70C2C6B42870012C446 /* HSDataLoadingVC.swift */; };
 		AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4D2C4E5E300084FCAE /* Follower.swift */; };
 		AD741E502C4E606C0084FCAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD741E4F2C4E606C0084FCAE /* User.swift */; };
 		ADD77F4E2C61F04700E4FE6F /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		AD00B70A2C6B38490012C446 /* HSAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSAlertContainerView.swift; sourceTree = "<group>"; };
+		AD00B70C2C6B42870012C446 /* HSDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSDataLoadingVC.swift; sourceTree = "<group>"; };
 		AD741E4D2C4E5E300084FCAE /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		AD741E4F2C4E606C0084FCAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADD77F4D2C61F04700E4FE6F /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				DC307C082C6138960002E910 /* ItemInfoVCs */,
 				DCDEBD032C5B27AC003319E8 /* HSUserInfoHeaderVC.swift */,
 				DC2251A52C4D19C5003C9443 /* HSAlertVC.swift */,
+				AD00B70C2C6B42870012C446 /* HSDataLoadingVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				DCDEBD082C5B2E92003319E8 /* Constants.swift in Sources */,
 				DC2251A22C4D134F003C9443 /* HSTitleLabel.swift in Sources */,
 				AD741E4E2C4E5E300084FCAE /* Follower.swift in Sources */,
+				AD00B70D2C6B42870012C446 /* HSDataLoadingVC.swift in Sources */,
 				DC2251A82C4D701C003C9443 /* UIViewController+Ext.swift in Sources */,
 				DC307C0A2C628C750002E910 /* PersistenceManager.swift in Sources */,
 				DC2251B32C50ABD7003C9443 /* UIHelper.swift in Sources */,

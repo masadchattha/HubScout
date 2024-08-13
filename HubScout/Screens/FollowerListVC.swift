@@ -24,7 +24,7 @@ private extension FollowerListVC {
 
 // MARK: - FollowerListVC
 
-class FollowerListVC: UIViewController {
+class FollowerListVC: HSDataLoadingVC {
 
     var username: String!
     private var followers: [Follower] = []
