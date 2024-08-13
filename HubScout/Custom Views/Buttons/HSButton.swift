@@ -20,11 +20,10 @@ class HSButton: UIButton {
     }
 
 
-    init(backgrounColor: UIColor, title: String) {
-        super.init(frame: .zero)
+    convenience init(backgrounColor: UIColor, title: String) {
+        self.init(frame: .zero)
         self.backgroundColor = backgrounColor
         self.setTitle(title, for: .normal)
-        configure()
     }
 
 
