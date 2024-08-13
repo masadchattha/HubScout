@@ -9,7 +9,7 @@ import UIKit
 
 class HSEmptyStateView: UIView {
     let messageLabel = HSTitleLabel(textAlignment: .center, fontSize: 28)
-    let logoImageView = UIImageView(image: .emptyStateLogo)
+    let logoImageView = UIImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,9 +34,9 @@ class HSEmptyStateView: UIView {
         
         messageLabel.numberOfLines  = 0
         messageLabel.textColor      = .secondaryLabel
-        
+
+        logoImageView.image         = Images.emptyStateLogo
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        messageLabel.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             messageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -170),
