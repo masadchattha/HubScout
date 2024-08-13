@@ -32,6 +32,7 @@ class FollowerListVC: HSDataLoadingVC {
     var page = 1
     var hasMoreFollowers = true
     var isSearching: Bool = false
+    var isLoadingMoreFollowers = false
 
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -111,6 +112,7 @@ private extension FollowerListVC {
 
     @objc func addButtonTapped() {
         showLoadingView()
+        isLoadingMoreFollowers = true
 
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self else { return }
@@ -134,6 +136,8 @@ private extension FollowerListVC {
             case .failure(let error):
                 self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
+
+            isLoadingMoreFollowers = false
         }
     }
 }
@@ -171,7 +175,7 @@ extension FollowerListVC: UICollectionViewDelegate {
         let height          = scrollView.frame.size.height
 
         if offsetY > (contentHeight - height) { // Scrolled to the bottom of screen
-            guard hasMoreFollowers else { return }
+            guard hasMoreFollowers, !isLoadingMoreFollowers else { return }
             page += 1
             getFollowers(username: username, page: page)
         }
