@@ -12,6 +12,7 @@ class FavoritesListVC: HSDataLoadingVC {
     let tableView             = UITableView()
     var favorites: [Follower] = []
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
@@ -82,7 +83,7 @@ extension FavoritesListVC: UITableViewDelegate, UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.reuseID, for: indexPath) as! FavoriteCell
+        let cell     = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.reuseID, for: indexPath) as! FavoriteCell
         let favorite = favorites[indexPath.row]
         cell.set(favorite: favorite)
         return cell

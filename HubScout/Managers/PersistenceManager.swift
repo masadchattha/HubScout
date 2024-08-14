@@ -7,17 +7,11 @@
 
 import Foundation
 
-enum PersistenceActionType {
-    case add, remove
-}
-
+enum PersistenceActionType { case add, remove }
 
 enum PersistenceManager {
 
-    enum Keys {
-        static let favorites = "FavoritesKey"
-    }
-
+    enum Keys { static let favorites = "FavoritesKey" }
     private static let defaults = UserDefaults.standard
 
 
