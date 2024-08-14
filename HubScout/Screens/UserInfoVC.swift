@@ -125,9 +125,10 @@ private extension UserInfoVC {
 }
 
 
-// MARK: - ItemInfoVCDelegate
+// MARK: - HSRepoItemVCDelegate
 
-extension UserInfoVC: ItemInfoVCDelegate {
+extension UserInfoVC: HSRepoItemVCDelegate {
+
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presentHSAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
@@ -135,7 +136,12 @@ extension UserInfoVC: ItemInfoVCDelegate {
         }
         presentSafariVC(with: url)
     }
+}
 
+
+// MARK: - HSFollowerItemVCDelegate
+
+extension UserInfoVC: HSFollowerItemVCDelegate {
 
     func didTapGetFollowers(for user: User) {
         guard user.followers > 0 else {

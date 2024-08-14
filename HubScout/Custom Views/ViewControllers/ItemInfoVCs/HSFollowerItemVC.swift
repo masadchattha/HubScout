@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol HSFollowerItemVCDelegate: AnyObject {
+    func didTapGetFollowers(for user: User)
+}
+
 class HSFollowerItemVC: HSItemInfoVC {
+
+    weak var delegate: HSFollowerItemVCDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
