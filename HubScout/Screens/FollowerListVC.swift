@@ -8,13 +8,6 @@
 import UIKit
 
 
-// MARK: - protocols
-
-protocol FollowerListVCDelegate: AnyObject {
-    func didRequestFollowers(for username: String)
-}
-
-
 // MARK: - Enums
 
 private extension FollowerListVC {
@@ -246,7 +239,7 @@ extension FollowerListVC: UISearchResultsUpdating {
 
 // MARK: - FollowerListVCDelegate
 
-extension FollowerListVC: FollowerListVCDelegate {
+extension FollowerListVC: UserInfoVCDelegate {
 
     func didRequestFollowers(for username: String) {
         self.username = username

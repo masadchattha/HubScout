@@ -8,10 +8,8 @@
 import UIKit
 
 protocol UserInfoVCDelegate: AnyObject {
-    func didTapGitHubProfile(for user: User)
-    func didTapGetFollowers(for user: User)
+    func didRequestFollowers(for username: String)
 }
-
 
 class UserInfoVC: UIViewController {
     let headerView          = UIView()
@@ -21,7 +19,7 @@ class UserInfoVC: UIViewController {
     var itemViews: [UIView] = []
 
     var username: String!
-    weak var delegate: FollowerListVCDelegate!
+    weak var delegate: UserInfoVCDelegate!
 
 
     override func viewDidLoad() {
@@ -127,9 +125,9 @@ private extension UserInfoVC {
 }
 
 
-// MARK: - UserInfoVCDelegate
+// MARK: - ItemInfoVCDelegate
 
-extension UserInfoVC: UserInfoVCDelegate {
+extension UserInfoVC: ItemInfoVCDelegate {
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presentHSAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
