@@ -111,15 +111,9 @@ private extension UserInfoVC {
 
 
     func configureUIElements(with user: User) {
-        let repoItemVC          = HSRepoItemVC(user: user)
-        repoItemVC.delegate     = self
-
-        let followerItemVC      = HSFollowerItemVC(user: user)
-        followerItemVC.delegate = self
-
         self.add(childVC: HSUserInfoHeaderVC(user: user), to: self.headerView)
-        self.add(childVC: repoItemVC, to: self.itemViewOne)
-        self.add(childVC: followerItemVC, to: self.itemViewTwo)
+        self.add(childVC: HSRepoItemVC(user: user, delegate: self), to: self.itemViewOne)
+        self.add(childVC: HSFollowerItemVC(user: user, delegate: self), to: self.itemViewTwo)
         self.dateLabel.text = "GitHub Since \(user.createdAt.convertToMonthYearFormat())"
     }
 }
