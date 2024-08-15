@@ -8,9 +8,10 @@
 import UIKit
 
 class FavoriteCell: UITableViewCell {
-    static let reuseID = "FavoriteCell"
+
+    static let reuseID  = "FavoriteCell"
     let avatarImageView = HSAvatarImageView(frame: .zero)
-    let usernamaLabel = HSTitleLabel(textAlignment: .left, fontSize: 26)
+    let usernamaLabel   = HSTitleLabel(textAlignment: .left, fontSize: 26)
 
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -26,15 +27,13 @@ class FavoriteCell: UITableViewCell {
 
     func set(favorite: Follower) {
         usernamaLabel.text = favorite.login
-        avatarImageView.downloadImage(from: favorite.avatarUrl)
+        avatarImageView.downloadImage(fromURL: favorite.avatarUrl)
     }
 
 
     func configure() {
-        addSubview(avatarImageView)
-        addSubview(usernamaLabel)
-
-        accessoryType = .disclosureIndicator
+        addSubviews(avatarImageView, usernamaLabel)
+        accessoryType        = .disclosureIndicator
         let padding: CGFloat = 12
 
         NSLayoutConstraint.activate([

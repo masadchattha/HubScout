@@ -15,7 +15,7 @@ class HSItemInfoVC: UIViewController {
     let actionButton    = HSButton()
 
     var user: User!
-    weak var delegate: UserInfoVCDelegate!
+
 
     init(user: User!) {
         super.init(nibName: nil, bundle: nil)
@@ -61,9 +61,7 @@ class HSItemInfoVC: UIViewController {
 
 
     private func layoutUI() {
-        view.addSubview(stackView)
-        view.addSubview(actionButton)
-
+        view.addSubviews(stackView, actionButton)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let padding: CGFloat = 20
 

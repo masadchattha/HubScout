@@ -9,7 +9,7 @@ import UIKit
 
 class HSAlertVC: UIViewController {
 
-    let containerView = UIView()
+    let containerView = HSAlertContainerView()
     let containerStackView = UIStackView()
     let titleLabel = HSTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = HSBodyLabel(textAlignment: .center)
@@ -20,6 +20,7 @@ class HSAlertVC: UIViewController {
     var buttonTitle: String?
 
     let padding: CGFloat = 20
+
 
     init(alertTitle: String?, message: String?, buttonTitle: String?) {
         super.init(nibName: nil, bundle: nil)
@@ -32,13 +33,7 @@ class HSAlertVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
 
-
-// MARK: - Life Cycle Methods
-
-
-extension HSAlertVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,16 +49,10 @@ extension HSAlertVC {
 
 // MARK: - UI Configuration
 
-
 private extension HSAlertVC {
 
     func configureContainerView() {
         view.addSubview(containerView)
-        containerView.backgroundColor    = .systemBackground
-        containerView.layer.cornerRadius = 16
-        containerView.layer.borderWidth  = 2
-        containerView.layer.borderColor  = UIColor.white.cgColor
-        containerView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
@@ -110,8 +99,7 @@ private extension HSAlertVC {
 }
 
 
-// MARK: - @objc Methods
-
+// MARK: - Action Methods
 
 extension HSAlertVC {
 
