@@ -13,7 +13,7 @@ class HSAlertVC: UIViewController {
     let containerStackView = UIStackView()
     let titleLabel = HSTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = HSBodyLabel(textAlignment: .center)
-    let actionButton = HSButton(backgrounColor: .systemPink, title: "OK")
+    let actionButton = HSButton(color: .systemPink, title: "Ok", systemImageName: "checkmark.circle")
 
     var alertTitle: String?
     var message: String?
