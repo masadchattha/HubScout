@@ -20,18 +20,17 @@ class HSButton: UIButton {
     }
 
 
-    init(backgrounColor: UIColor, title: String) {
-        super.init(frame: .zero)
+    convenience init(backgrounColor: UIColor, title: String) {
+        self.init(frame: .zero)
         self.backgroundColor = backgrounColor
         self.setTitle(title, for: .normal)
-        configure()
     }
 
 
     private func configure() {
-        layer.cornerRadius      = 10
-        titleLabel?.textColor   = .white
-        titleLabel?.font        = .preferredFont(forTextStyle: .headline)
+        layer.cornerRadius = 10
+        titleLabel?.font   = .preferredFont(forTextStyle: .headline)
+        setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }
 

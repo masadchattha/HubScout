@@ -32,32 +32,23 @@ class HSUserInfoHeaderVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubViews()
+        view.addSubviews(avatarImageView, usernameLabel, nameLabel, locationImageView, locationLabel, bioLabel)
+
         layoutUI()
         configureUIElements()
     }
 
 
     func configureUIElements() {
-        avatarImageView.downloadImage(from: user.avatarUrl)
+        avatarImageView.downloadImage(fromURL: user.avatarUrl)
         usernameLabel.text          = user.login
         nameLabel.text              = user.name ?? ""
         locationLabel.text          = user.location ?? "No Location"
         bioLabel.text               = user.bio ?? "No bio available"
         bioLabel.numberOfLines      = 3
 
-        locationImageView.image     = UIImage(systemName: SFSymbols.location)
+        locationImageView.image     = SFSymbols.location
         locationImageView.tintColor = .secondaryLabel
-    }
-
-
-    func addSubViews() {
-        view.addSubview(avatarImageView)
-        view.addSubview(usernameLabel)
-        view.addSubview(nameLabel)
-        view.addSubview(locationImageView)
-        view.addSubview(locationLabel)
-        view.addSubview(bioLabel)
     }
 
 
@@ -95,7 +86,7 @@ class HSUserInfoHeaderVC: UIViewController {
             bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: textImagePadding),
-            bioLabel.heightAnchor.constraint(equalToConstant: 60)
+            bioLabel.heightAnchor.constraint(equalToConstant: 90)
         ])
     }
 }
