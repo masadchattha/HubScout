@@ -16,6 +16,7 @@ class HSItemInfoVC: UIViewController {
 
     var user: User!
 
+
     init(user: User!) {
         super.init(nibName: nil, bundle: nil)
         self.user = user
@@ -61,7 +62,6 @@ class HSItemInfoVC: UIViewController {
 
     private func layoutUI() {
         view.addSubviews(stackView, actionButton)
-
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let padding: CGFloat = 20
 

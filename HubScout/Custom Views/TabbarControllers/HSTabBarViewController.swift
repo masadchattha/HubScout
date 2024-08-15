@@ -9,7 +9,6 @@ import UIKit
 
 class HSTabBarViewController: UITabBarController {
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .systemGreen

@@ -28,9 +28,9 @@ class HSButton: UIButton {
 
 
     private func configure() {
-        layer.cornerRadius      = 10
-        titleLabel?.textColor   = .white
-        titleLabel?.font        = .preferredFont(forTextStyle: .headline)
+        layer.cornerRadius = 10
+        titleLabel?.font   = .preferredFont(forTextStyle: .headline)
+        setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }
 

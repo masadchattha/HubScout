@@ -11,6 +11,7 @@ class HSDataLoadingVC: UIViewController {
 
     var containerView: UIView!
 
+
     func showLoadingView() {
         containerView = UIView(frame: view.bounds)
         view.addSubview(containerView)
@@ -27,6 +28,7 @@ class HSDataLoadingVC: UIViewController {
             activityIndicator.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
         ])
+
         activityIndicator.startAnimating()
     }
 

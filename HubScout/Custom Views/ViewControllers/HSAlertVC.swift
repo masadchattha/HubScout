@@ -21,6 +21,7 @@ class HSAlertVC: UIViewController {
 
     let padding: CGFloat = 20
 
+
     init(alertTitle: String?, message: String?, buttonTitle: String?) {
         super.init(nibName: nil, bundle: nil)
         self.alertTitle     = alertTitle
@@ -32,13 +33,7 @@ class HSAlertVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
 
-
-// MARK: - Life Cycle Methods
-
-
-extension HSAlertVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +48,6 @@ extension HSAlertVC {
 
 
 // MARK: - UI Configuration
-
 
 private extension HSAlertVC {
 
@@ -105,8 +99,7 @@ private extension HSAlertVC {
 }
 
 
-// MARK: - @objc Methods
-
+// MARK: - Action Methods
 
 extension HSAlertVC {
 

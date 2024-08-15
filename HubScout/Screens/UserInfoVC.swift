@@ -12,6 +12,7 @@ protocol UserInfoVCDelegate: AnyObject {
 }
 
 class UserInfoVC: UIViewController {
+
     let scrollView          = UIScrollView()
     let contentView         = UIView()
 
@@ -145,6 +146,7 @@ extension UserInfoVC: HSRepoItemVCDelegate {
             presentHSAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
             return
         }
+
         presentSafariVC(with: url)
     }
 }

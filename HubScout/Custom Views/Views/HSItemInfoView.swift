@@ -7,16 +7,14 @@
 
 import UIKit
 
-enum ItemInfoType {
-    case repos, gists, following, followers
-}
-
+enum ItemInfoType { case repos, gists, following, followers }
 
 class HSItemInfoView: UIView {
 
     let symbolImageView = UIImageView()
     let titleLabel      = HSTitleLabel(textAlignment: .left, fontSize: 14)
     let countLabel      = HSTitleLabel(textAlignment: .center, fontSize: 14)
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)

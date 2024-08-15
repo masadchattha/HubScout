@@ -8,10 +8,12 @@
 import UIKit
 
 class FollowerCell: UICollectionViewCell {
-    static let reuseID = "FollowerCell"
+
+    static let reuseID  = "FollowerCell"
     let avatarImageView = HSAvatarImageView(frame: .zero)
-    let usernamaLabel = HSTitleLabel(textAlignment: .center, fontSize: 16)
+    let usernamaLabel   = HSTitleLabel(textAlignment: .center, fontSize: 16)
     
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -28,9 +30,8 @@ class FollowerCell: UICollectionViewCell {
     }
 
     func configure() {
-        let padding: CGFloat = 8
         addSubviews(avatarImageView, usernamaLabel)
-        translatesAutoresizingMaskIntoConstraints = false
+        let padding: CGFloat = 8
 
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),

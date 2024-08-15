@@ -15,6 +15,7 @@ class HSFollowerItemVC: HSItemInfoVC {
 
     weak var delegate: HSFollowerItemVCDelegate!
 
+
     init(user: User, delegate: HSFollowerItemVCDelegate) {
         super.init(user: user)
         self.delegate = delegate
