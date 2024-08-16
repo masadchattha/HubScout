@@ -12,9 +12,13 @@ class NetworkManager {
     static let shared   = NetworkManager()
     private let baseURL = "https://api.github.com/users/"
     let cache           = NSCache<NSString, UIImage>()
+    let decoder         = JSONDecoder()
 
 
-    private init() {}
+    private init() {
+        decoder.keyDecodingStrategy  = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .iso8601
+    }
 
 
     func getFollowers(for username: String, page: Int, completed: @escaping (Result<[Follower], HSError>) -> Void) {
@@ -42,9 +46,7 @@ class NetworkManager {
             }
 
             do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let followers = try decoder.decode([Follower].self, from: data)
+                let followers = try self.decoder.decode([Follower].self, from: data)
                 completed(.success(followers))
             } catch {
                 completed(.failure(.invalidData))
@@ -52,6 +54,21 @@ class NetworkManager {
         }
 
         task.resume()
+    }
+
+
+    func getFollowers(for username: String, page: Int) async throws ->  [Follower] {
+        let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
+        guard let url = URL(string: endpoint) else { throw HSError.invalidUsername }
+
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw HSError.invalidResponse }
+
+        do {
+            return try decoder.decode([Follower].self, from: data)
+        } catch {
+            throw HSError.invalidData
+        }
     }
 
 
@@ -80,10 +97,7 @@ class NetworkManager {
             }
 
             do {
-                let decoder                  = JSONDecoder()
-                decoder.keyDecodingStrategy  = .convertFromSnakeCase
-                decoder.dateDecodingStrategy = .iso8601
-                let user                     = try decoder.decode(User.self, from: data)
+                let user = try self.decoder.decode(User.self, from: data)
                 completed(.success(user))
             } catch {
                 completed(.failure(.invalidData))

@@ -122,7 +122,7 @@ private extension UserInfoVC {
             case .success(let user):
                 DispatchQueue.main.async { self.configureUIElements(with: user) }
             case .failure(let error):
-                self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                self.presentHSAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
@@ -143,7 +143,7 @@ extension UserInfoVC: HSRepoItemVCDelegate {
 
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
-            presentHSAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            presentHSAlert(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
             return
         }
 
@@ -158,7 +158,7 @@ extension UserInfoVC: HSFollowerItemVCDelegate {
 
     func didTapGetFollowers(for user: User) {
         guard user.followers > 0 else {
-            presentHSAlertOnMainThread(title: "No Followers", message: "This user has no followers. What a shame 😔", buttonTitle: "so sad")
+            presentHSAlert(title: "No Followers", message: "This user has no followers. What a shame 😔", buttonTitle: "so sad")
             return
         }
 

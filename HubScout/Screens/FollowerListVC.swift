@@ -115,7 +115,7 @@ private extension FollowerListVC {
                 self.addUserToFavorite(user: user)
 
             case .failure(let error):
-                self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                self.presentHSAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
@@ -128,11 +128,11 @@ private extension FollowerListVC {
             guard let self else { return }
 
             guard let error else {
-                self.presentHSAlertOnMainThread(title: "Success!", message: "You've successfully favorited this user 🎉", buttonTitle: "Hooray!")
+                self.presentHSAlert(title: "Success!", message: "You've successfully favorited this user 🎉", buttonTitle: "Hooray!")
                 return
             }
 
-            self.presentHSAlertOnMainThread(title: "Unable to favorite", message: error.rawValue, buttonTitle: "Ok")
+            self.presentHSAlert(title: "Unable to favorite", message: error.rawValue, buttonTitle: "Ok")
         }
     }
 }
@@ -198,16 +198,19 @@ private extension FollowerListVC {
         showLoadingView()
         isLoadingMoreFollowers = true
 
-        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
-            guard let self else { return }
-            dismissLoadingView() 
+        Task {
+            do {
+                let followers = try await NetworkManager.shared.getFollowers(for: username, page: page)
+                updateUI(with: followers)
+                dismissLoadingView()
+            } catch {
+                if let hsError = error as? HSError {
+                    presentHSAlert(title: "Bad Stuff Happend", message: hsError.rawValue, buttonTitle: "OK")
+                } else {
+                    presentDefaultErrorAlert()
+                }
 
-            switch result {
-            case .success(let followers):
-                self.updateUI(with: followers)
-
-            case .failure(let error):
-                self.presentHSAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "OK")
+                dismissLoadingView()
             }
 
             isLoadingMoreFollowers = false

@@ -97,7 +97,7 @@ private extension SearchVC {
 
     @objc func pushFollowerListVC() {
         guard isUsernameEntered else {
-            presentHSAlertOnMainThread(title: Constant.emptyUsernameErrorTitle, message: Constant.emptyUsernameErrorDescription, buttonTitle: "OK")
+            presentHSAlert(title: Constant.emptyUsernameErrorTitle, message: Constant.emptyUsernameErrorDescription, buttonTitle: "OK")
             return
         }
  
