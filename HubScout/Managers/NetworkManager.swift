@@ -60,7 +60,6 @@ class NetworkManager {
     func getFollowers(for username: String, page: Int) async throws ->  [Follower] {
         let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
         guard let url = URL(string: endpoint) else { throw HSError.invalidUsername }
-
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw HSError.invalidResponse }
 
