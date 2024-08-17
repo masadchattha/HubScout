@@ -115,14 +115,16 @@ private extension UserInfoVC {
 private extension UserInfoVC {
 
     func getUserInfo() {
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self else { return }
-
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async { self.configureUIElements(with: user) }
-            case .failure(let error):
-                self.presentHSAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+        Task {
+            do {
+                let user = try await NetworkManager.shared.getUserInfo(for: username)
+                configureUIElements(with: user)
+            } catch {
+                if let hserror = error as? HSError {
+                    presentHSAlert(title: "Something went wrong", message: hserror.rawValue, buttonTitle: "Ok")
+                } else {
+                    presentDefaultErrorAlert()
+                }
             }
         }
     }

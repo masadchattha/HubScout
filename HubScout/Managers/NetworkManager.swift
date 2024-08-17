@@ -107,6 +107,20 @@ class NetworkManager {
     }
 
 
+    func getUserInfo(for username: String) async throws -> User {
+        let endpoint = baseURL + "\(username)"
+        guard let url = URL(string: endpoint) else { throw HSError.invalidUsername }
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw HSError.invalidResponse }
+
+        do {
+            return try decoder.decode(User.self, from: data)
+        } catch {
+            throw HSError.invalidData
+        }
+    }
+
+
     func downloadImage(from urlString: String, completed: @escaping (UIImage?) -> Void) {
         let cacheKey = NSString(string: urlString)
         if let image = cache.object(forKey: cacheKey) {
