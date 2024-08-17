@@ -106,16 +106,19 @@ private extension FollowerListVC {
     @objc func addButtonTapped() {
         showLoadingView()
 
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self else { return }
-            self.dismissLoadingView()
+        Task {
+            do {
+                let user = try await NetworkManager.shared.getUserInfo(for: username)
+                addUserToFavorite(user: user)
+                dismissLoadingView()
+            } catch {
+                if let hsError = error as? HSError {
+                    presentHSAlert(title: "Something went wrong", message: hsError.rawValue, buttonTitle: "Ok")
+                } else {
+                    presentDefaultErrorAlert()
+                }
 
-            switch result {
-            case .success(let user):
-                self.addUserToFavorite(user: user)
-
-            case .failure(let error):
-                self.presentHSAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                dismissLoadingView()
             }
         }
     }

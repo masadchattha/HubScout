@@ -120,8 +120,8 @@ private extension UserInfoVC {
                 let user = try await NetworkManager.shared.getUserInfo(for: username)
                 configureUIElements(with: user)
             } catch {
-                if let hserror = error as? HSError {
-                    presentHSAlert(title: "Something went wrong", message: hserror.rawValue, buttonTitle: "Ok")
+                if let hsError = error as? HSError {
+                    presentHSAlert(title: "Something went wrong", message: hsError.rawValue, buttonTitle: "Ok")
                 } else {
                     presentDefaultErrorAlert()
                 }
