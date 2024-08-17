@@ -206,6 +206,7 @@ private extension FollowerListVC {
                 let followers = try await NetworkManager.shared.getFollowers(for: username, page: page)
                 updateUI(with: followers)
                 dismissLoadingView()
+                isLoadingMoreFollowers = false
             } catch {
                 if let hsError = error as? HSError {
                     presentHSAlert(title: "Bad Stuff Happend", message: hsError.rawValue, buttonTitle: "OK")
@@ -214,9 +215,8 @@ private extension FollowerListVC {
                 }
 
                 dismissLoadingView()
+                isLoadingMoreFollowers = false
             }
-
-            isLoadingMoreFollowers = false
         }
     }
 
