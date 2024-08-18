@@ -131,11 +131,11 @@ private extension FollowerListVC {
             guard let self else { return }
 
             guard let error else {
-                self.presentHSAlert(title: "Success!", message: "You've successfully favorited this user 🎉", buttonTitle: "Hooray!")
+                DispatchQueue.main.async { self.presentHSAlert(title: "Success!", message: "You've successfully favorited this user 🎉", buttonTitle: "Hooray!") }
                 return
             }
 
-            self.presentHSAlert(title: "Unable to favorite", message: error.rawValue, buttonTitle: "Ok")
+            DispatchQueue.main.async { self.presentHSAlert(title: "Something Went Wrong", message: error.rawValue, buttonTitle: "Ok") }
         }
     }
 }
