@@ -12,13 +12,19 @@ fileprivate var containerView: UIView!
 
 extension UIViewController {
 
-    func presentHSAlertOnMainThread(title: String, message: String, buttonTitle: String) {
-        DispatchQueue.main.async {
-            let alertVC = HSAlertVC(alertTitle: title, message: message, buttonTitle: buttonTitle)
-            alertVC.modalPresentationStyle = .overFullScreen
-            alertVC.modalTransitionStyle = .crossDissolve
-            self.present(alertVC, animated: true)
-        }
+    func presentHSAlert(title: String, message: String, buttonTitle: String) {
+        let alertVC = HSAlertVC(alertTitle: title, message: message, buttonTitle: buttonTitle)
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.modalTransitionStyle   = .crossDissolve
+        self.present(alertVC, animated: true)
+    }
+
+
+    func presentDefaultErrorAlert() {
+        let alertVC = HSAlertVC(alertTitle: "Something Went Wrong", message: "We were unable to complete your task at this time. Please try agian. ", buttonTitle: "Ok")
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.modalTransitionStyle   = .crossDissolve
+        self.present(alertVC, animated: true)
     }
 
 

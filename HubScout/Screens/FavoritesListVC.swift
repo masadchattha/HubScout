@@ -53,7 +53,7 @@ class FavoritesListVC: HSDataLoadingVC {
                 self.updateUI(with: favorites)
 
             case .failure(let error):
-                self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                DispatchQueue.main.async { self.presentHSAlert(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok") }
             }
         }
     }
@@ -108,7 +108,7 @@ extension FavoritesListVC: UITableViewDelegate, UITableViewDataSource {
                 return
             }
 
-            self.presentHSAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
+            self.presentHSAlert(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
     }
 }
