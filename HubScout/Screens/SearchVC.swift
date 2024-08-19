@@ -21,7 +21,7 @@ class SearchVC: UIViewController {
 
     let logoImageView      = UIImageView()
     let usernameTextField  = HSTextField()
-    let callToActionButton = HSButton(backgrounColor: .systemGreen, title: "Get Followers")
+    let callToActionButton = HSButton(color: .systemGreen, title: "Get Followers", systemImageName: "person.3")
 
     var isUsernameEntered: Bool { usernameTextField.text!.isNotBlank }
 
@@ -97,7 +97,7 @@ private extension SearchVC {
 
     @objc func pushFollowerListVC() {
         guard isUsernameEntered else {
-            presentHSAlertOnMainThread(title: Constant.emptyUsernameErrorTitle, message: Constant.emptyUsernameErrorDescription, buttonTitle: "OK")
+            presentHSAlert(title: Constant.emptyUsernameErrorTitle, message: Constant.emptyUsernameErrorDescription, buttonTitle: "OK")
             return
         }
  

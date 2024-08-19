@@ -115,14 +115,16 @@ private extension UserInfoVC {
 private extension UserInfoVC {
 
     func getUserInfo() {
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self else { return }
-
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async { self.configureUIElements(with: user) }
-            case .failure(let error):
-                self.presentHSAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+        Task {
+            do {
+                let user = try await NetworkManager.shared.getUserInfo(for: username)
+                configureUIElements(with: user)
+            } catch {
+                if let hsError = error as? HSError {
+                    presentHSAlert(title: "Something went wrong", message: hsError.rawValue, buttonTitle: "Ok")
+                } else {
+                    presentDefaultErrorAlert()
+                }
             }
         }
     }
@@ -143,7 +145,7 @@ extension UserInfoVC: HSRepoItemVCDelegate {
 
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
-            presentHSAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            presentHSAlert(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
             return
         }
 
@@ -158,7 +160,7 @@ extension UserInfoVC: HSFollowerItemVCDelegate {
 
     func didTapGetFollowers(for user: User) {
         guard user.followers > 0 else {
-            presentHSAlertOnMainThread(title: "No Followers", message: "This user has no followers. What a shame 😔", buttonTitle: "so sad")
+            presentHSAlert(title: "No Followers", message: "This user has no followers. What a shame 😔", buttonTitle: "so sad")
             return
         }
 

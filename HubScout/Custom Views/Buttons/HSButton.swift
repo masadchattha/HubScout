@@ -20,23 +20,26 @@ class HSButton: UIButton {
     }
 
 
-    convenience init(backgrounColor: UIColor, title: String) {
+    convenience init(color: UIColor, title: String, systemImageName: String) {
         self.init(frame: .zero)
-        self.backgroundColor = backgrounColor
-        self.setTitle(title, for: .normal)
+        set(color: color, title: title, systemImageName: "")
     }
 
 
     private func configure() {
-        layer.cornerRadius = 10
-        titleLabel?.font   = .preferredFont(forTextStyle: .headline)
-        setTitleColor(.white, for: .normal)
+        configuration              = .tinted()
+        configuration?.cornerStyle = .medium
         translatesAutoresizingMaskIntoConstraints = false
     }
 
 
-    func set(backgrounColor: UIColor, title: String) {
-        self.backgroundColor = backgrounColor
-        setTitle(title, for: .normal)
+    func set(color: UIColor, title: String, systemImageName: String) {
+        configuration?.baseBackgroundColor = color
+        configuration?.baseForegroundColor = color
+        configuration?.title               = title
+
+        configuration?.image               = UIImage(systemName: systemImageName)
+        configuration?.imagePadding        = 6
+        configuration?.imagePlacement      = .leading
     }
 }
