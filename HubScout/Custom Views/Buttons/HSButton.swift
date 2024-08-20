@@ -22,7 +22,7 @@ class HSButton: UIButton {
 
     convenience init(color: UIColor, title: String, systemImageName: String) {
         self.init(frame: .zero)
-        set(color: color, title: title, systemImageName: "")
+        set(color: color, title: title, systemImageName: systemImageName)
     }
 
 
