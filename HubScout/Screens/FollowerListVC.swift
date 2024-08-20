@@ -51,6 +51,21 @@ class FollowerListVC: HSDataLoadingVC {
         getFollowers(username: username, page: page)
         configureDataSource()
     }
+
+
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if followers.isEmpty && !isLoadingMoreFollowers {
+            var config   = UIContentUnavailableConfiguration.empty()
+            config.image = .init(systemName: "person.slash")
+            config.text  = "No Followers"
+            config.secondaryText = "This user has no followers. Go follow them."
+            contentUnavailableConfiguration = config
+        } else if isSearching && filteredFollowers.isEmpty {
+            contentUnavailableConfiguration = UIContentUnavailableConfiguration.search()
+        } else {
+            contentUnavailableConfiguration = nil
+        }
+    }
 }
 
 
@@ -93,6 +108,7 @@ extension FollowerListVC {
     func configureSearchController() {
         let searchController                    = UISearchController()
         searchController.searchResultsUpdater   = self
+        searchController.searchBar.delegate     = self
         searchController.searchBar.placeholder  = "Search for a username"
         navigationItem.searchController         = searchController
     }
@@ -154,7 +170,7 @@ private extension FollowerListVC {
     }
 
 
-    func updateDate(on followers: [Follower]) {
+    func updateData(on followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
@@ -224,33 +240,36 @@ private extension FollowerListVC {
     func updateUI(with followers: [Follower]) {
         if followers.count < 100 { hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
-
-        if self.followers.isEmpty {
-            let message = "This user doesn't have any followers. Go follow them 😀"
-            DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
-            return
-        }
-
-        self.updateDate(on: self.followers)
+        self.updateData(on: self.followers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
 }
 
 
 // MARK: - UISearchResultsUpdating
 
-extension FollowerListVC: UISearchResultsUpdating {
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
 
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, filter.isNotEmpty else {
             filteredFollowers.removeAll()
-            updateDate(on: followers)
+            updateData(on: followers)
             isSearching = false
             return
         }
 
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
-        updateDate(on: filteredFollowers)
+        updateData(on: filteredFollowers)
+        setNeedsUpdateContentUnavailableConfiguration()
+    }
+
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredFollowers.removeAll()
+        updateUI(with: followers)
+        isSearching = false
+        setNeedsUpdateContentUnavailableConfiguration()
     }
 }
 
