@@ -51,6 +51,21 @@ class FollowerListVC: HSDataLoadingVC {
         getFollowers(username: username, page: page)
         configureDataSource()
     }
+
+
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if followers.isEmpty && !isLoadingMoreFollowers {
+            var config   = UIContentUnavailableConfiguration.empty()
+            config.image = .init(systemName: "person.slash")
+            config.text  = "No Followers"
+            config.secondaryText = "This user has no followers. Go follow them."
+            contentUnavailableConfiguration = config
+        } else if isSearching && filteredFollowers.isEmpty {
+            contentUnavailableConfiguration = UIContentUnavailableConfiguration.search()
+        } else {
+            contentUnavailableConfiguration = nil
+        }
+    }
 }
 
 
@@ -224,14 +239,8 @@ private extension FollowerListVC {
     func updateUI(with followers: [Follower]) {
         if followers.count < 100 { hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
-
-        if self.followers.isEmpty {
-            let message = "This user doesn't have any followers. Go follow them 😀"
-            DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
-            return
-        }
-
         self.updateDate(on: self.followers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
 }
 
@@ -251,6 +260,7 @@ extension FollowerListVC: UISearchResultsUpdating {
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateDate(on: filteredFollowers)
+        setNeedsUpdateContentUnavailableConfiguration()
     }
 }
 
