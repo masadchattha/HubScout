@@ -170,7 +170,7 @@ private extension FollowerListVC {
     }
 
 
-    func updateDate(on followers: [Follower]) {
+    func updateData(on followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
@@ -240,7 +240,7 @@ private extension FollowerListVC {
     func updateUI(with followers: [Follower]) {
         if followers.count < 100 { hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
-        self.updateDate(on: self.followers)
+        self.updateData(on: self.followers)
         setNeedsUpdateContentUnavailableConfiguration()
     }
 }
@@ -253,14 +253,14 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, filter.isNotEmpty else {
             filteredFollowers.removeAll()
-            updateDate(on: followers)
+            updateData(on: followers)
             isSearching = false
             return
         }
 
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
-        updateDate(on: filteredFollowers)
+        updateData(on: filteredFollowers)
         setNeedsUpdateContentUnavailableConfiguration()
     }
 
