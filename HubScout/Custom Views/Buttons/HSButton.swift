@@ -43,3 +43,8 @@ class HSButton: UIButton {
         configuration?.imagePlacement      = .leading
     }
 }
+
+
+#Preview {
+    HSButton(color: .blue, title: "Test Button", systemImageName: "person")
+}
