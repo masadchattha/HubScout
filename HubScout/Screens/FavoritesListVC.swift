@@ -26,6 +26,19 @@ class FavoritesListVC: HSDataLoadingVC {
     }
 
 
+    override func updateContentUnavailableConfiguration(using state: UIContentUnavailableConfigurationState) {
+        if favorites.isEmpty {
+            var config   = UIContentUnavailableConfiguration.empty()
+            config.image = .init(systemName: "star")
+            config.text  = "No Favorites"
+            config.secondaryText = "Add a favorite on the follower list screen."
+            contentUnavailableConfiguration = config
+        } else {
+            contentUnavailableConfiguration = nil
+        }
+    }
+
+
     func configureVC() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -60,14 +73,11 @@ class FavoritesListVC: HSDataLoadingVC {
 
 
     func updateUI(with favorites: [Follower]) {
-        if favorites.isEmpty {
-            self.showEmptyStateView(with: "No Favorites?\n\nAdd one on the follower screen.", in: self.view)
-        } else {
-            self.favorites = favorites
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.view.bringSubviewToFront(self.tableView)
-            }
+        self.favorites = favorites
+        setNeedsUpdateContentUnavailableConfiguration()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.view.bringSubviewToFront(self.tableView)
         }
     }
 }
@@ -105,6 +115,7 @@ extension FavoritesListVC: UITableViewDelegate, UITableViewDataSource {
             guard let error else {
                 favorites.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .left)
+                setNeedsUpdateContentUnavailableConfiguration()
                 return
             }
 
