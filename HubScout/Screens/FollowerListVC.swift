@@ -108,6 +108,7 @@ extension FollowerListVC {
     func configureSearchController() {
         let searchController                    = UISearchController()
         searchController.searchResultsUpdater   = self
+        searchController.searchBar.delegate     = self
         searchController.searchBar.placeholder  = "Search for a username"
         navigationItem.searchController         = searchController
     }
@@ -247,7 +248,7 @@ private extension FollowerListVC {
 
 // MARK: - UISearchResultsUpdating
 
-extension FollowerListVC: UISearchResultsUpdating {
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
 
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, filter.isNotEmpty else {
@@ -260,6 +261,14 @@ extension FollowerListVC: UISearchResultsUpdating {
         isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateDate(on: filteredFollowers)
+        setNeedsUpdateContentUnavailableConfiguration()
+    }
+
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredFollowers.removeAll()
+        updateUI(with: followers)
+        isSearching = false
         setNeedsUpdateContentUnavailableConfiguration()
     }
 }
